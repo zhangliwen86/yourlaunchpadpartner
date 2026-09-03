@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!--
+  YLPP PRODUCTION BUILD — PHASE 1 (homepage + design system).
+  This file is NOT deployed and is not connected to any domain or
+  hosting. It lives in /ylp-production/, entirely separate from the
+  live site at https://yourlaunchpadpartner.sg/, which this build
+  never touches. The canonical URL below records the INTENDED
+  production URL for when this is eventually reviewed and launched —
+  it has no effect until this file is actually deployed there.
+  Visual design system: The Working Ledger (approved).
+-->
+<html lang="en-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Launchpad Partner | Business Support for Singapore SMEs</title>
+<meta name="description" content="Practical business support for Singapore SMEs, including accounting and bookkeeping, grants and funding support, automation and AI, and digital enablement.">
+<link rel="canonical" href="https://yourlaunchpadpartner.sg/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Your Launchpad Partner">
+<meta property="og:title" content="Your Launchpad Partner | Business Support for Singapore SMEs">
+<meta property="og:description" content="Practical business support for Singapore SMEs, including accounting and bookkeeping, grants and funding support, automation and AI, and digital enablement.">
+<meta property="og:url" content="https://yourlaunchpadpartner.sg/">
+<meta property="og:locale" content="en_SG">
+<meta name="twitter:card" content="summary">
+
+<!-- Fonts self-hosted as of Phase 6 (previously the Google Fonts CDN,
+     flagged in Phase 1 for this pass) — see css/fonts.css. -->
+<link rel="stylesheet" href="css/fonts.css">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yourlaunchpadpartner.sg/#organization",
+      "name": "Your Launchpad Partner (S) Pte Ltd",
+      "alternateName": "YLPP",
+      "url": "https://yourlaunchpadpartner.sg/",
+      "areaServed": { "@type": "Country", "name": "Singapore" },
+      "description": "A Singapore boutique SME advisory practice offering accounting and bookkeeping, grants and funding support, automation and AI consulting, and digital enablement through a hands-on website workshop.",
+      "founder": [
+        { "@type": "Person", "name": "Liwen", "jobTitle": "Chartered Accountant (Singapore)" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yourlaunchpadpartner.sg/#website",
+      "url": "https://yourlaunchpadpartner.sg/",
+      "name": "Your Launchpad Partner",
+      "publisher": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "inLanguage": "en-SG"
+    },
+    {
+      "@type": "Person",
+      "name": "Liwen",
+      "jobTitle": "Chartered Accountant (Singapore)",
+      "worksFor": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "description": "Chartered Accountant in Singapore and former CFO."
+    },
+    {
+      "@type": "Person",
+      "name": "Pearlyne",
+      "worksFor": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "description": "Background in financial planning and analysis (FP&A) and automation."
+    },
+    {
+      "@type": "Service",
+      "name": "Accounting & Bookkeeping",
+      "serviceType": "Accounting and bookkeeping services",
+      "provider": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "areaServed": { "@type": "Country", "name": "Singapore" },
+      "description": "Getting a Singapore SME's numbers in order — clearer records, clearer decisions, less guesswork about where the business actually stands."
+    },
+    {
+      "@type": "Service",
+      "name": "Grants & Funding Support",
+      "serviceType": "Grant discovery and support",
+      "provider": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "areaServed": { "@type": "Country", "name": "Singapore" },
+      "description": "Helping Singapore SMEs explore what government support may be relevant, understand eligibility, and navigate the application process. No guaranteed approval or funding is implied."
+    },
+    {
+      "@type": "Service",
+      "name": "Automation & AI Consulting",
+      "serviceType": "Business process automation consulting",
+      "provider": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "areaServed": { "@type": "Country", "name": "Singapore" },
+      "description": "Reviewing repetitive manual work and deciding, case by case, whether automation or AI genuinely helps."
+    },
+    {
+      "@type": "Service",
+      "name": "Digital Enablement — Website Workshop",
+      "serviceType": "Hands-on website-building workshop",
+      "provider": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "areaServed": { "@type": "Country", "name": "Singapore" },
+      "description": "A small-group, one-day, online workshop where participants build a real website and learn to maintain it themselves.",
+      "offers": {
+        "@type": "Offer",
+        "price": "699",
+        "priceCurrency": "SGD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="wordmark" href="/"><span class="mark">+</span>Your Launchpad Partner</a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/workshop/">Workshop</a></li>
+        <li><a href="/showcase/">Showcase</a></li>
+        <li><a class="btn" href="/contact/">Talk to us</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="progress-track" aria-hidden="true">
+  <div class="progress-fill" id="progressFill"></div>
+  <div class="progress-ticks" id="progressTicks"></div>
+</div>
+<div class="progress-track-m" aria-hidden="true">
+  <div class="progress-fill-m" id="progressFillM"></div>
+  <div class="progress-ticks-m" id="progressTicksM"></div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero mode-navy" id="hero" aria-label="Introduction">
+    <div class="hero-shell">
+      <div class="hero-index">
+        <span>THE FOUNDATION LINE — DRAWS ITSELF</span>
+        <span>YOUR LAUNCHPAD PARTNER, SINGAPORE</span>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Your Launchpad Partner · Singapore</p>
+          <h1>A stronger foundation for your business.</h1>
+          <p class="sub">Finance, funding and practical technology to help you move forward — from people who understand what it's like to build a business.</p>
+          <p class="mono credential">LIWEN · <span class="name">Chartered Accountant (Singapore)</span> · Former CFO</p>
+          <div class="cta-row">
+            <a class="btn" href="/contact/">Talk to us</a>
+            <a class="btn-text" href="#pillars">See how it works</a>
+          </div>
+        </div>
+
+        <div class="hero-idx" id="heroIdx">
+          <p class="idx-lede">One foundation, drawn once — referenced throughout:</p>
+          <div class="idx-flow">
+            <span class="idx-item"><span class="idx-num mono">01</span><span class="idx-name">Accounting &amp; Bookkeeping</span></span><span class="idx-sep mono">/</span>
+            <span class="idx-item"><span class="idx-num mono">02</span><span class="idx-name">Grants &amp; Funding Support</span></span><span class="idx-sep mono">/</span>
+            <span class="idx-item"><span class="idx-num mono">03</span><span class="idx-name">Automation &amp; AI</span></span><span class="idx-sep mono">/</span>
+            <span class="idx-item"><span class="idx-num mono">04</span><span class="idx-name">Digital Enablement</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop: the full architectural foundation drawing, unchanged from the approved prototype -->
+      <div class="hero-drawing-wrap hero-drawing-desktop">
+        <svg class="hero-drawing" viewBox="0 0 1280 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An architectural foundation drawing that draws itself: registration marks, a construction grid, a partial arc, and a stepped line resolving to a gold terminus.">
+          <g class="hd-grid-line" opacity=".35">
+            <line x1="0" y1="60" x2="1280" y2="60"/><line x1="0" y1="180" x2="1280" y2="180"/>
+            <line x1="0" y1="300" x2="1280" y2="300"/><line x1="0" y1="420" x2="1280" y2="420"/>
+            <line x1="160" y1="0" x2="160" y2="460"/><line x1="480" y1="0" x2="480" y2="460"/>
+            <line x1="800" y1="0" x2="800" y2="460"/><line x1="1120" y1="0" x2="1120" y2="460"/>
+          </g>
+          <g class="hd-crop">
+            <path d="M 6 26 V 6 H 26"/><path d="M 1254 26 V 6 H 1234"/>
+            <path d="M 6 434 V 454 H 26"/><path d="M 1254 434 V 454 H 1234"/>
+          </g>
+          <line class="hd-dim" x1="40" y1="46" x2="1160" y2="46"/>
+          <line class="hd-dim" x1="40" y1="40" x2="40" y2="52"/>
+          <line class="hd-dim" x1="1160" y1="40" x2="1160" y2="52"/>
+          <text class="hd-dimtext" x="560" y="34">FOUNDATION — WORKING DRAWING</text>
+          <path class="hd-arc" d="M 780 -90 A 350 350 0 0 1 1140 280"/>
+          <path class="hd-path-extend" d="M 40 380 H -30"/>
+          <path class="hd-path" d="M 40 380 H 300 V 300 H 560 V 200 H 860 V 130 H 1160"/>
+          <path class="hd-path-extend" d="M 1160 130 H 1230"/>
+          <path class="hd-path-extend" d="M 860 130 V 60"/>
+          <g class="hd-tick">
+            <line x1="300" y1="290" x2="300" y2="310"/><line x1="560" y1="190" x2="560" y2="210"/>
+            <line x1="860" y1="120" x2="860" y2="140"/>
+          </g>
+          <path class="hd-node" d="M 300 291 v 18 M 291 300 h 18"/><text class="hd-num" x="312" y="335">01</text>
+          <path class="hd-node" d="M 560 191 v 18 M 551 200 h 18"/><text class="hd-num" x="572" y="235">02</text>
+          <path class="hd-node hd-node-teal" d="M 860 121 v 18 M 851 130 h 18"/><text class="hd-num" x="872" y="165">03</text>
+          <rect class="hd-terminus" x="1150" y="118" width="20" height="20"/>
+          <text class="hd-num" x="1148" y="106" style="opacity:.55;">04</text>
+        </svg>
+      </div>
+
+      <!-- Mobile: recomposed, not shrunk — a compact vertical construction line.
+           Deliberately does less (no crop marks / dimension line) — see brief §20. -->
+      <div class="hero-drawing-wrap hero-drawing-mobile-wrap hero-drawing-mobile">
+        <svg class="hero-drawing" viewBox="0 0 350 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A compact vertical construction line that draws itself, connecting three points and resolving in a gold terminus.">
+          <g class="hd-grid-line" opacity=".35">
+            <line x1="0" y1="60" x2="350" y2="60"/><line x1="0" y1="140" x2="350" y2="140"/><line x1="0" y1="220" x2="350" y2="220"/>
+          </g>
+          <path class="hd-path" style="stroke-dasharray:520; stroke-dashoffset:520;" d="M 30 20 V 70 H 140 V 130 H 60 V 190 H 160 V 230"/>
+          <path class="hd-node" d="M 21 70 v 14 M 14 77 h 14"/><text class="hd-num" x="46" y="66">01</text>
+          <path class="hd-node" d="M 131 130 v 14 M 124 137 h 14"/><text class="hd-num" x="156" y="126">02</text>
+          <path class="hd-node hd-node-teal" d="M 51 190 v 14 M 44 197 h 14"/><text class="hd-num" x="76" y="186">03</text>
+          <rect class="hd-terminus" x="151" y="221" width="18" height="18"/><text class="hd-num" x="176" y="234">04</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="section mode-cream" aria-label="The problem">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">Where it usually starts</p></div>
+      <div class="col-main-narrow reveal">
+        <h2 style="font-size:clamp(28px,3.6vw,40px);">Running a business is already complicated enough.</h2>
+        <p style="font-style:italic; opacity:.75; font-size:18px;">You don't need another complicated solution.</p>
+        <div class="situations">
+          <div class="situation"><span class="mark mono">—</span><p>Your books are behind and you're not sure what's actually true.</p></div>
+          <div class="situation"><span class="mark mono">—</span><p>There may be support available, but you're not sure what's relevant.</p></div>
+          <div class="situation"><span class="mark mono">—</span><p>You're doing the same manual work every week.</p></div>
+          <div class="situation"><span class="mark mono">—</span><p>You're not sure what needs fixing first.</p></div>
+        </div>
+        <p style="font-style:italic; margin-top:20px;">You don't need to have everything figured out before you reach out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUR PILLARS ============ -->
+  <section class="section mode-navy" id="pillars" aria-label="Services overview">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">The foundation</p></div>
+      <div class="col-main reveal">
+        <h2>One foundation. Four ways we can help.</h2>
+        <p style="opacity:.75; font-size:15px; max-width:52ch;">Each discipline follows its own working logic — watch it resolve as you scroll.</p>
+
+        <div class="svc-list">
+          <!-- 01 ACCOUNTING -->
+          <div class="svc-row">
+            <div class="svc-num" data-of="/ 04">01</div>
+            <div class="svc-body">
+              <div>
+                <h3 class="svc-name">Accounting &amp; Bookkeeping</h3>
+                <p class="svc-desc">Get your numbers in order. Clearer records, clearer decisions, less guesswork about where the business actually stands.</p>
+                <a class="learn" href="/services/#accounting">Learn more about Accounting &amp; Bookkeeping →</a>
+              </div>
+              <div>
+                <div class="svc-logic">
+                  <span class="step">RECORD</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">RECONCILE</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">UNDERSTAND</span>
+                </div>
+                <div class="ledger" aria-hidden="true">
+                  <div class="ledger-row" style="--w0:44px; --w:70px;"><span class="lbl">Revenue</span><span class="ledger-mask"></span></div>
+                  <div class="ledger-row" style="--w0:78px; --w:70px;"><span class="lbl">Expenses</span><span class="ledger-mask"></span></div>
+                  <div class="ledger-row" style="--w0:58px; --w:70px;"><span class="lbl">Adjustments</span><span class="ledger-mask"></span></div>
+                  <div class="ledger-row final" style="--w0:66px; --w:70px;"><span class="lbl">Net position</span><span class="ledger-mask"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 GRANTS -->
+          <div class="svc-row">
+            <div class="svc-num" data-of="/ 04">02</div>
+            <div class="svc-body">
+              <div>
+                <h3 class="svc-name">Grants &amp; Funding Support</h3>
+                <p class="svc-desc">Not sure what's available? Let's find out. We'll help you explore what may be relevant to your business — and be straight with you about what isn't.</p>
+                <a class="learn" href="/services/#grants">Learn more about Grants &amp; Funding Support →</a>
+              </div>
+              <div>
+                <div class="svc-logic">
+                  <span class="step">EXPLORE</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">QUALIFY</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">APPLY</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">FOLLOW THROUGH</span>
+                </div>
+                <svg class="route-svg" viewBox="0 0 220 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle class="route-dot" cx="14" cy="48" r="4"/>
+                  <path class="route-path dropped" d="M 14 48 Q 60 14 110 22"/>
+                  <path class="route-path chosen" d="M 14 48 Q 60 48 110 48"/>
+                  <path class="route-path dropped" d="M 14 48 Q 60 82 110 74"/>
+                  <circle class="route-dot final" cx="110" cy="48" r="4"/>
+                  <path class="route-path chosen" d="M 110 48 H 206"/>
+                  <text class="route-annot" x="0" y="10">POSSIBLE ROUTES</text>
+                  <text class="route-annot resolved" x="120" y="66">QUALIFIED</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 AUTOMATION -->
+          <div class="svc-row tech">
+            <div class="svc-num" data-of="/ 04">03</div>
+            <div class="svc-body">
+              <div>
+                <h3 class="svc-name">Automation &amp; AI</h3>
+                <p class="svc-desc">If you're doing the same thing every week, there's probably a better way. We start with the actual work, then decide whether automation or AI genuinely helps.</p>
+                <a class="learn" href="/services/#automation">Learn more about Automation &amp; AI →</a>
+              </div>
+              <div>
+                <div class="svc-logic">
+                  <span class="step">OBSERVE</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">SIMPLIFY</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">AUTOMATE</span>
+                </div>
+                <div class="auto-repeat" aria-hidden="true">
+                  <span class="auto-tick collapse" style="--ix:10px; --iy:-3px;">01</span>
+                  <span class="auto-tick collapse" style="--ix:6px; --iy:2px;">01</span>
+                  <span class="auto-tick collapse" style="--ix:3px; --iy:-2px;">01</span>
+                  <span class="auto-tick keep" style="--ix:0; --iy:0;">01</span>
+                  <span class="auto-result"><span class="rline"></span><span class="rlabel">ONE FLOW</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 DIGITAL -->
+          <div class="svc-row tech">
+            <div class="svc-num" data-of="/ 04">04</div>
+            <div class="svc-body">
+              <div>
+                <h3 class="svc-name">Digital Enablement</h3>
+                <p class="svc-desc">Build it. Understand it. Keep it yours. Our hands-on website workshop is the clearest way to see how we work — and to walk away with a real skill.</p>
+                <a class="learn" href="/workshop/">Learn more about the Website Workshop →</a>
+              </div>
+              <div>
+                <div class="svc-logic">
+                  <span class="step">BUILD</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">UNDERSTAND</span><span class="arrow" aria-hidden="true">→</span>
+                  <span class="step">MAINTAIN</span>
+                </div>
+                <div class="construct-wrap" aria-hidden="true">
+                  <svg class="construct-svg" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="construct-rect" x="4" y="4" width="192" height="112"/>
+                    <line class="construct-rect" x1="4" y1="26" x2="196" y2="26"/>
+                  </svg>
+                  <div class="browser-mini">
+                    <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="navrow"><span class="ni"></span><span class="ni"></span><span class="ni"></span></div>
+                    <div class="body">
+                      <div class="h"></div>
+                      <div class="l"></div><div class="l short"></div>
+                      <div class="row2"><span class="cta"></span><span class="chip"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PEOPLE ============ -->
+  <section class="section mode-cream" id="founder" aria-label="About the founders">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">Who's behind this</p></div>
+      <div class="col-main reveal">
+        <h2 style="margin-bottom:30px;">A note from Liwen.</h2>
+        <div class="founder-grid">
+          <div>
+            <span class="quote-mark-lg" aria-hidden="true">&#8220;</span>
+            <p class="founder-quote">I've spent years looking at businesses through the numbers. But numbers are never the whole story.</p>
+          </div>
+          <div class="founder-body">
+            <p class="founder-note">Margin note · Liwen</p>
+            <p>I'm a Chartered Accountant in Singapore, and before this I worked as a CFO — which mostly taught me that the hardest part of running a business is rarely the accounting itself. It's knowing what to do next.</p>
+            <p>That's what Your Launchpad Partner is built around: getting the numbers right, understanding what support might genuinely be relevant, and using practical technology to take some of the repetitive work off your plate — one useful step at a time, not everything at once.</p>
+            <div class="credential-tags"><span class="credential-tag">Chartered Accountant, Singapore</span><span class="credential-tag">Former CFO</span></div>
+          </div>
+        </div>
+
+        <div class="founder-divider"><span class="rule-draw" style="flex:1;"></span><span class="mono">CONTINUED</span><span class="rule-draw" style="flex:1;"></span></div>
+
+        <div class="founder-grid">
+          <div><p class="founder-quote" style="font-size:clamp(20px,2.4vw,28px);">And I'm not doing this alone.</p></div>
+          <div class="founder-body">
+            <p class="founder-note">Margin note · Pearlyne</p>
+            <p>Pearlyne brings a background in financial planning and analysis, and a similar impatience with numbers that sit in a spreadsheet without helping anyone decide anything. She's usually the one asking "okay, but what are we going to do with this" — and then building the automation that answers it.</p>
+            <p>Between the two of us, you get someone who understands the accounts and someone who understands how to make them useful day to day.</p>
+            <div class="credential-tags"><span class="credential-tag">FP&amp;A</span><span class="credential-tag">Automation</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKSHOP ============ -->
+  <section class="section mode-navy" id="workshop" aria-label="Website workshop">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">04 · Digital enablement</p></div>
+      <div class="col-main reveal">
+        <h2>See how we build things.</h2>
+        <p class="sub" style="opacity:.8; font-size:17px;">Build your website. Understand how it works. Keep it yours.</p>
+
+        <div class="workshop-meta">
+          <div class="item"><span class="k">Price</span><span class="v">SGD 699</span></div>
+          <div class="item"><span class="k">Group size</span><span class="v">3–5</span></div>
+          <div class="item"><span class="k">Format</span><span class="v">One day · Online (Zoom)</span></div>
+        </div>
+
+        <p class="mono" style="font-size:12px; opacity:.6; margin-bottom:4px;">The site takes shape as the workshop progresses</p>
+        <div class="build-strip" id="buildStrip">
+          <div class="frame" data-step="1">
+            <div class="frame-chrome"><div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-addr"></span></div>
+              <div class="frame-body"><div class="bl short" style="opacity:.3;"></div></div></div>
+            <div class="frame-label"><span class="num">01</span><span class="name">Questionnaire</span></div>
+            <div class="frame-connector"></div>
+          </div>
+          <div class="frame" data-step="2">
+            <div class="frame-chrome"><div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-addr"></span></div>
+              <div class="frame-body"><div class="fnav"><span></span><span></span></div><div class="bl"></div><div class="bl short"></div></div></div>
+            <div class="frame-label"><span class="num">02</span><span class="name">Tracker</span></div>
+            <div class="frame-connector"></div>
+          </div>
+          <div class="frame" data-step="3">
+            <div class="frame-chrome"><div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-addr"></span></div>
+              <div class="frame-body"><div class="fnav"><span></span><span></span><span></span></div><div class="fh"></div><div class="bl"></div><div class="bl short"></div></div></div>
+            <div class="frame-label"><span class="num">03</span><span class="name">Build</span></div>
+            <div class="frame-connector"></div>
+          </div>
+          <div class="frame" data-step="4">
+            <div class="frame-chrome"><div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-addr" style="background:var(--c-gold); opacity:.5;"></span></div>
+              <div class="frame-body"><div class="fnav"><span></span><span></span><span></span></div><div class="fh"></div><div class="bl"></div><div class="bl short"></div><div class="fcta"></div></div></div>
+            <div class="frame-label"><span class="num" style="color:var(--c-gold);">04</span><span class="name">Go live</span></div>
+            <div class="frame-connector"></div>
+          </div>
+          <div class="frame" data-step="5">
+            <div class="frame-chrome"><div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-addr" style="background:var(--c-gold); opacity:.5;"></span></div>
+              <div class="frame-body"><div class="fnav"><span></span><span></span><span></span></div><div class="fh"></div><div class="bl"></div><div class="bl short"></div><div class="fcta"></div><div class="fchip"></div></div></div>
+            <div class="frame-label"><span class="num" style="color:var(--teal-acc);">05</span><span class="name">Maintain</span></div>
+          </div>
+        </div>
+
+        <p style="opacity:.85; max-width:56ch;">A small-group, hands-on workshop — not a generic AI webinar. You leave with a real, working website and the ability to keep it running yourself.</p>
+        <a class="btn-text" href="/workshop/">Learn about the workshop →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW WE WORK ============ -->
+  <section class="section mode-cream" aria-label="How we work">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">Getting started</p></div>
+      <div class="col-main-narrow reveal">
+        <h2>No complicated process.</h2>
+        <div class="how-list">
+          <div class="how-row"><span class="n mono">01</span><h3>Tell us what's going on</h3></div>
+          <div class="how-row"><span class="n mono">02</span><h3>Talk it through</h3></div>
+          <div class="how-row"><span class="n mono">03</span><h3>Agree on a practical next step</h3></div>
+        </div>
+        <p style="font-style:italic; margin-top:20px;">The point is to move things forward — not to sell you everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="section mode-navy closing" id="closing" aria-label="Get in touch">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">Ready when you are</p></div>
+      <div class="col-main-narrow reveal">
+        <h2>Let's talk about your business.</h2>
+        <p>You don't need a polished plan. You don't need to know exactly which service you need. Tell us what's going on. We'll start from there.</p>
+        <div class="cta-row">
+          <a class="btn" href="/contact/">Talk to us</a>
+          <a class="btn-text" href="/contact/?interest=workshop">Register your interest in the workshop →</a>
+        </div>
+        <div class="closing-terminus"><span class="line"></span><span class="dot"></span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-col footer-about">
+      <a class="wordmark" href="/" style="margin-bottom:14px; display:inline-flex;"><span class="mark">+</span>Your Launchpad Partner</a>
+      <p>Finance, funding and practical technology for Singapore SME owners — from people who understand what it's like to build a business.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/workshop/">Workshop</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <ul>
+        <li><a href="/showcase/">Showcase</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/#accounting">Accounting &amp; Bookkeeping</a></li>
+        <li><a href="/services/#grants">Grants &amp; Funding Support</a></li>
+        <li><a href="/services/#automation">Automation &amp; AI</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© <span id="year">2026</span> Your Launchpad Partner (S) Pte Ltd · Singapore</span>
+    <span>Chartered Accountant, Singapore · Former CFO</span>
+  </div>
+</footer>
+
+<div class="mobile-sticky-cta">
+  <a class="btn" href="/contact/">Talk to us</a>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/forms.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
