@@ -1,0 +1,43 @@
+/* ============================================================
+   PAGES — page-specific composition. Phase 1 covers the homepage
+   only; About / Services / Workshop / Showcase / Contact each get
+   their own scoped block here in later phases, appended below
+   rather than folded into components.css, so a page's quirks never
+   leak into the shared system.
+   ============================================================ */
+
+/* ---------- Home ---------- */
+#hero{ /* uses .hero / .hero-grid / .hero-drawing-* from layout.css + components.css as-is */ }
+
+#pillars .col-main > p{ margin-bottom:0; }
+
+/* the mobile hero drawing needs a touch more breathing room above the
+   problem section than the desktop one, since it sits shorter */
+@media (max-width:767px){
+  .hero-drawing-mobile-wrap{ padding:0 0 8px; }
+}
+
+/* ---------- About ---------- */
+#about-story .story-text{ margin-top:8px; }
+#about-perspectives .col-main{ padding-top:4px; }
+#about-honesty .statement-block{ max-width:900px; }
+
+/* ---------- Services ---------- */
+#svc-connected .connect-flow{ max-width:560px; }
+#services-honesty .statement-block{ max-width:900px; }
+
+/* ---------- Workshop ---------- */
+#big-idea .statement-block{ max-width:900px; }
+#what-youll-build .connect-flow{ max-width:560px; }
+/* five frames, not four — narrower cards and a tighter connector so
+   the whole sequence fits without needing the horizontal scroll
+   .build-strip falls back to on tighter viewports */
+#process .build-strip .frame{ width:166px; margin-right:16px; }
+#process .frame-desc{ max-width:20ch; font-size:12px; }
+#day-flow .principle-row .sub-list{ padding-left:0; }
+#register .workshop-meta{ margin-top:22px; }
+
+/* ---------- Showcase ---------- */
+#empty-state .empty-frame{ max-width:640px; margin-left:auto; margin-right:auto; }
+#future-structure .future-entry{ max-width:820px; }
+
