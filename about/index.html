@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--
+  YLPP PRODUCTION BUILD — PHASE 2 (About). Not deployed, not connected
+  to any domain or hosting. Lives in /ylp-production/about/, entirely
+  separate from https://yourlaunchpadpartner.sg/, which this build
+  never touches. Shares css/js with the Phase 1 homepage unchanged.
+-->
+<html lang="en-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Your Launchpad Partner | Singapore Business Support</title>
+<meta name="description" content="Meet the people behind Your Launchpad Partner — practical business support for Singapore SMEs: accounting, funding, automation and technology.">
+<link rel="canonical" href="https://yourlaunchpadpartner.sg/about/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Your Launchpad Partner">
+<meta property="og:title" content="About Your Launchpad Partner | Singapore Business Support">
+<meta property="og:description" content="Meet the people behind Your Launchpad Partner — practical business support for Singapore SMEs.">
+<meta property="og:url" content="https://yourlaunchpadpartner.sg/about/">
+<meta property="og:locale" content="en_SG">
+<meta name="twitter:card" content="summary">
+
+<!-- Fonts self-hosted as of Phase 6 (previously the Google Fonts CDN) — see css/fonts.css. -->
+<link rel="stylesheet" href="../css/fonts.css">
+
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://yourlaunchpadpartner.sg/about/#page",
+      "url": "https://yourlaunchpadpartner.sg/about/",
+      "name": "About Your Launchpad Partner",
+      "isPartOf": { "@id": "https://yourlaunchpadpartner.sg/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yourlaunchpadpartner.sg/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://yourlaunchpadpartner.sg/about/" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Liwen",
+      "jobTitle": "Chartered Accountant (Singapore)",
+      "worksFor": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "description": "Chartered Accountant in Singapore and former CFO."
+    },
+    {
+      "@type": "Person",
+      "name": "Pearlyne",
+      "worksFor": { "@id": "https://yourlaunchpadpartner.sg/#organization" },
+      "description": "Background in financial planning and analysis (FP&A) and automation."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="wordmark" href="/"><span class="mark">+</span>Your Launchpad Partner</a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/workshop/">Workshop</a></li>
+        <li><a href="/showcase/">Showcase</a></li>
+        <li><a class="btn" href="/contact/">Talk to us</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="progress-track" aria-hidden="true">
+  <div class="progress-fill" id="progressFill"></div>
+  <div class="progress-ticks" id="progressTicks"></div>
+</div>
+<div class="progress-track-m" aria-hidden="true">
+  <div class="progress-fill-m" id="progressFillM"></div>
+  <div class="progress-ticks-m" id="progressTicksM"></div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero mode-navy" id="hero" aria-label="About introduction">
+    <div class="shell">
+      <p class="crumb" aria-hidden="true"><a href="/">Home</a> / About</p>
+      <div class="reveal">
+        <p class="kicker">Who's behind this</p>
+        <h1>Good businesses don't always need more advice. Sometimes they need someone to work through things with them.</h1>
+        <p class="sub">Your Launchpad Partner was built around a simple idea: business owners shouldn't have to figure everything out alone. We help make sense of the numbers, work through what support may be relevant, and find practical ways to make the business easier to run.</p>
+
+        <div class="hero-strip" aria-hidden="true">
+          <svg viewBox="0 0 1200 90" xmlns="http://www.w3.org/2000/svg" role="presentation">
+            <g class="hs-crop"><path d="M 4 20 V 6 H 18"/><path d="M 1196 20 V 6 H 1182"/></g>
+            <path class="hs-line" d="M 20 46 H 1180"/>
+            <path class="hs-node" d="M 291 37 v 18 M 282 46 h 18"/>
+            <path class="hs-node teal" d="M 601 37 v 18 M 592 46 h 18"/>
+            <rect class="hs-terminus" x="1170" y="37" width="18" height="18"/>
+            <text class="hs-label" x="20" y="76">TWO PEOPLE. ONE PRACTICE.</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY WE BUILT THIS ============ -->
+  <section class="section mode-cream" id="about-story" aria-label="Why we built this">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">Why we built this</p></div>
+      <div class="col-main-narrow reveal">
+        <div class="story-text">
+          <p>Running a business means making decisions with incomplete information.</p>
+          <p>Sometimes the books aren't where they need to be. Sometimes there may be support available, but it's difficult to know whether it actually applies. Sometimes the problem isn't a lack of effort — it's that too much of the work is manual.</p>
+          <p>We started Your Launchpad Partner because we believe practical help should begin with understanding the problem, not selling a package.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIWEN + PEARLYNE ============ -->
+  <section class="section mode-cream" id="about-people" aria-label="The people">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">A note from Liwen</p></div>
+      <div class="col-main reveal">
+        <h2 style="margin-bottom:30px;">A note from Liwen.</h2>
+        <div class="founder-grid">
+          <div>
+            <span class="quote-mark-lg" aria-hidden="true">&#8220;</span>
+            <p class="founder-quote">I've spent years looking at businesses through the numbers. But numbers are never the whole story.</p>
+          </div>
+          <div class="founder-body">
+            <p class="founder-note">Margin note · Liwen</p>
+            <p>Liwen is a Chartered Accountant in Singapore and a former CFO. Her perspective is grounded in understanding how businesses actually operate — not simply what appears in the accounts.</p>
+            <p>The emphasis is always on clarity: what the numbers actually mean, and what a practical next step looks like from here.</p>
+            <div class="credential-tags"><span class="credential-tag">Chartered Accountant, Singapore</span><span class="credential-tag">Former CFO</span></div>
+          </div>
+        </div>
+
+        <div class="founder-divider"><span class="rule-draw" style="flex:1;"></span><span class="mono">CONTINUED</span><span class="rule-draw" style="flex:1;"></span></div>
+
+        <div class="founder-grid">
+          <div><p class="founder-quote" style="font-size:clamp(20px,2.4vw,28px);">And I'm not doing this alone.</p></div>
+          <div class="founder-body">
+            <p class="founder-note">Margin note · Pearlyne</p>
+            <p>Pearlyne brings a background in financial planning and analysis, and a practical understanding of automation. Her role bridges financial information, day-to-day workflows, and the repetitive work that useful automation can take off someone's plate.</p>
+            <div class="credential-tags"><span class="credential-tag">FP&amp;A</span><span class="credential-tag">Automation</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TWO PERSPECTIVES ============ -->
+  <section class="section mode-navy" id="about-perspectives" aria-label="Two perspectives">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">How we think</p></div>
+      <div class="col-main reveal">
+        <h2>Two perspectives, one practical approach.</h2>
+        <div class="perspective-split">
+          <div class="side">
+            <p class="label">Liwen</p>
+            <h3>The numbers.</h3>
+            <p>Where the business actually stands, once the accounts are in order.</p>
+          </div>
+          <div class="plus" aria-hidden="true">+</div>
+          <div class="side">
+            <p class="label">Pearlyne</p>
+            <h3>The work.</h3>
+            <p>How to make that information useful day to day, without the repetitive manual effort.</p>
+          </div>
+        </div>
+        <p class="perspective-note">Between the two of us, you get someone who understands the accounts and someone who understands how to make them useful day to day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE BELIEVE ============ -->
+  <section class="section mode-cream" id="about-beliefs" aria-label="What we believe">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">What we believe</p></div>
+      <div class="col-main-narrow reveal">
+        <h2>Five things we try to hold to.</h2>
+        <div class="principle-list">
+          <div class="principle-row">
+            <span class="num">01</span>
+            <div><h3>Start with the problem.</h3><p>Not the package. We'd rather understand what's actually going on first.</p></div>
+          </div>
+          <div class="principle-row">
+            <span class="num">02</span>
+            <div><h3>Keep it practical.</h3><p>Advice that doesn't turn into a next step isn't worth much.</p></div>
+          </div>
+          <div class="principle-row">
+            <span class="num">03</span>
+            <div><h3>Be honest.</h3><p>Including when the honest answer is "not yet" or "not us."</p></div>
+          </div>
+          <div class="principle-row">
+            <span class="num">04</span>
+            <div><h3>Add value.</h3><p>If we can't, we'd rather say so than fill the time.</p></div>
+          </div>
+          <div class="principle-row">
+            <span class="num">05</span>
+            <div><h3>Treat the business like it matters.</h3><p>Because it's not just a business to the person who built it.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HONESTY / REFERRAL PRINCIPLE ============ -->
+  <section class="section mode-navy" id="about-honesty" aria-label="Our honesty principle">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">Worth saying plainly</p></div>
+      <div class="col-main-narrow reveal statement-block">
+        <span class="quote-mark-lg" aria-hidden="true">&#8220;</span>
+        <p class="statement">We're not here to sell you everything.</p>
+        <p>We won't always be the right people for every problem. If someone else is better suited to help, we'll say so. We'd rather help you find the right answer than sell you something that doesn't make sense.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="section mode-navy closing" id="closing" aria-label="Get in touch">
+    <div class="shell grid12">
+      <div class="col-idx"><p class="kicker reveal">One step at a time</p></div>
+      <div class="col-main-narrow reveal">
+        <h2>You don't need to have everything figured out before you reach out.</h2>
+        <div class="cta-row">
+          <a class="btn" href="/contact/">Talk to us</a>
+          <a class="btn-text" href="/services/">See our services →</a>
+        </div>
+        <div class="closing-terminus"><span class="line"></span><span class="dot"></span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-col footer-about">
+      <a class="wordmark" href="/" style="margin-bottom:14px; display:inline-flex;"><span class="mark">+</span>Your Launchpad Partner</a>
+      <p>Finance, funding and practical technology for Singapore SME owners — from people who understand what it's like to build a business.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/workshop/">Workshop</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <ul>
+        <li><a href="/showcase/">Showcase</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/#accounting">Accounting &amp; Bookkeeping</a></li>
+        <li><a href="/services/#grants">Grants &amp; Funding Support</a></li>
+        <li><a href="/services/#automation">Automation &amp; AI</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© <span id="year">2026</span> Your Launchpad Partner (S) Pte Ltd · Singapore</span>
+    <span>Chartered Accountant, Singapore · Former CFO</span>
+  </div>
+</footer>
+
+<div class="mobile-sticky-cta">
+  <a class="btn" href="/contact/">Talk to us</a>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/motion.js"></script>
+<script src="../js/forms.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
