@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <!--
-  YLPP PRODUCTION BUILD — PHASE 4 (Contact). Not deployed, not connected
-  to any domain or hosting. Lives in /ylp-production/contact/, entirely
-  separate from https://yourlaunchpadpartner.sg/, which this build
-  never touches. Shares css/js with Phases 1–3 unchanged.
+  YLPP PRODUCTION BUILD — Contact page. Live at
+  https://yourlaunchpadpartner.sg/contact/. Shares css/js with the
+  other pages unchanged.
 
-  FORM SAFETY NOTE: window.YLPP_FORM_CONFIG.FORM_ENDPOINT (set in
-  ../js/forms.js) is intentionally empty. No backend exists. Nothing
-  submitted through this form is sent, stored, or logged anywhere —
-  see js/forms.js for the full submission path.
+  FORM NOTE: this form posts to Formspree (endpoint set as the form's
+  action attribute below, and read from there by ../js/forms.js — see
+  that file for the full submission path). Formspree handles storage
+  and delivery to the connected inbox; no other backend exists.
 
   Accessible validation fallback: required / type="email" attributes
   are left on the relevant inputs below for visitors without
@@ -24,6 +23,11 @@
 <meta name="description" content="Talk to Your Launchpad Partner about accounting, grants and funding support, automation and AI, or our practical website workshop for Singapore businesses.">
 <link rel="canonical" href="https://yourlaunchpadpartner.sg/contact/">
 <meta name="robots" content="index, follow">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Your Launchpad Partner">
@@ -134,7 +138,7 @@
       <div class="col-main-narrow reveal">
         <h2>What's going on?</h2>
 
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/meaqzoyz" method="POST">
 
           <!-- honeypot — invisible and unreachable for people and screen readers -->
           <div class="hp-field" aria-hidden="true">
@@ -161,7 +165,7 @@
 
           <div class="field-row">
             <label for="business">Business name <span class="opt">(optional)</span></label>
-            <input type="text" id="business" name="business" autocomplete="organization">
+            <input type="text" id="business" name="business_name" autocomplete="organization">
           </div>
 
           <div class="field-row">
@@ -170,7 +174,7 @@
               <option value="" disabled selected>Select one</option>
               <option value="accounting">Accounting &amp; Bookkeeping</option>
               <option value="grants">Grants &amp; Funding Support</option>
-              <option value="automation">Automation &amp; AI Consulting</option>
+              <option value="automation">Automation &amp; AI</option>
               <option value="workshop">Website Workshop</option>
               <option value="unsure">Not sure yet</option>
             </select>
@@ -185,15 +189,14 @@
           <div class="field-row">
             <label id="contactMethodLabel">Preferred contact method <span class="req">(required)</span></label>
             <div class="radio-group" role="radiogroup" aria-labelledby="contactMethodLabel">
-              <span class="radio-opt"><input type="radio" id="contact-email" name="contact_method" value="email" required><label for="contact-email">Email</label></span>
-              <span class="radio-opt"><input type="radio" id="contact-phone" name="contact_method" value="phone"><label for="contact-phone">Phone</label></span>
-              <span class="radio-opt"><input type="radio" id="contact-either" name="contact_method" value="either"><label for="contact-either">Either</label></span>
+              <span class="radio-opt"><input type="radio" id="contact-email" name="preferred_contact" value="email" required><label for="contact-email">Email</label></span>
+              <span class="radio-opt"><input type="radio" id="contact-phone" name="preferred_contact" value="phone"><label for="contact-phone">Phone</label></span>
+              <span class="radio-opt"><input type="radio" id="contact-either" name="preferred_contact" value="either"><label for="contact-either">Either</label></span>
             </div>
           </div>
 
           <div class="form-submit-row">
             <button type="submit" class="btn" id="formSubmitBtn">Send your message</button>
-            <p class="form-note">Nothing you enter here is sent, stored or logged until a real submission handler is connected.</p>
           </div>
 
           <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
