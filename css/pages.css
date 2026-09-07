@@ -71,32 +71,48 @@
 .showcase-project{ display:grid; grid-template-columns:64px 1fr; gap:24px; padding:44px 0; border-top:1px solid var(--line); }
 .showcase-project:last-child{ border-bottom:1px solid var(--line); }
 .showcase-project .sp-num{ font-family:var(--font-mono); font-size:13px; opacity:.55; padding-top:4px; }
-.showcase-project .sp-body{ display:grid; grid-template-columns:1fr 300px; gap:40px; align-items:start; }
+/* Round 3: preview widened to ~48% of the row (was a fixed 300px) so
+   the live multi-page capture reads as a real screenshot, not a
+   thumbnail — brief calls for "approximately 45–50% of the desktop
+   row". Equal-fr split does that without a hardcoded pixel width. */
+.showcase-project .sp-body{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
 .showcase-project .sp-category{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--teal-acc); margin-bottom:8px; }
 .showcase-project .sp-name{ font-size:clamp(22px,2.6vw,30px); margin-bottom:10px; }
 .showcase-project .sp-desc{ font-size:15px; opacity:.85; max-width:48ch; margin-bottom:8px; }
 .showcase-project .sp-demo{ font-size:13.5px; opacity:.6; max-width:48ch; margin-bottom:18px; }
 .showcase-project .sp-link.disabled{ opacity:.5; font-style:italic; border-bottom:none; }
 
-/* preview panel — Round 2: real screenshots of the four live sites,
-   not stylised mockups. Same consistent treatment for all four: one
-   thin border, a minimal browser-chrome bar (three dots only — no
-   fake address bar, no invented UI), then the screenshot itself
-   fills the rest at a fixed 8:5 aspect ratio (the screenshots'
-   native ratio, so nothing is cropped or distorted). The screenshot
-   is the dominant visual element — no overlay, no heavy shadow. The
-   whole panel is a real link to the live site, mirroring the "View
-   the website →" text link beside it. */
-.sp-preview{ border:1px solid var(--line-strong); background:var(--c-cream); color:var(--c-ink); display:block; text-decoration:none; }
-.sp-preview .bar{ display:flex; align-items:center; gap:4px; padding:7px 9px; border-bottom:1px solid var(--line); }
-.sp-preview .dot{ width:5px; height:5px; border-radius:50%; background:var(--line-strong); }
-.sp-preview .shot-frame{ display:block; width:100%; aspect-ratio:8/5; overflow:hidden; background:var(--line); }
-.sp-preview .shot-frame img{ display:block; width:100%; height:100%; object-fit:cover; }
-.sp-preview.disabled{ pointer-events:none; }
+/* preview panel — Round 3: a large landscape panel that cycles through
+   genuine screenshots of several real pages on the live site (crossfade),
+   replacing Round 2's single static homepage shot. No decorative browser
+   chrome (dropped per this round's brief — "a very subtle border is
+   acceptable" is all that remains). The screenshot fills the panel at
+   its native 8:5 ratio; object-fit:cover only ever crops evenly, never
+   distorts. The whole panel stays a real link to the live site. */
+.sp-preview{ border:1px solid var(--line-strong); background:var(--c-cream); display:block; text-decoration:none; }
+.sp-preview .shot-frame{ position:relative; display:block; width:100%; aspect-ratio:8/5; overflow:hidden; background:var(--line); }
+.sp-preview .shot-frame-img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity 1.1s ease;
+}
+.sp-preview .shot-frame-img.is-active{ opacity:1; }
+/* reduced motion (and the no-JS fallback below): only the first frame
+   (home) is ever marked is-active, so nothing here needs to change —
+   this rule just removes the crossfade transition itself */
+@media (prefers-reduced-motion: reduce) {
+  .sp-preview .shot-frame-img {
+    transition: none;
+  }
+}
+/* no-JS fallback: JS adds html.js-enabled (see main.js); without it,
+   show only the first frame per project so the panel isn't a blank
+   stack of overlapping images */
+html:not(.js-enabled) .sp-preview .shot-frame-img{ opacity:0; }
+html:not(.js-enabled) .sp-preview .shot-frame-img:first-child{ opacity:1; }
 
 @media (max-width:900px){
   .showcase-project .sp-body{ grid-template-columns:1fr; }
-  .sp-preview{ max-width:420px; }
+  .sp-preview{ max-width:none; }
 }
 
 #showcase-same-process .statement-block{ max-width:760px; }

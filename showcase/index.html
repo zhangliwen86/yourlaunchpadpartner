@@ -27,6 +27,33 @@
   live site, alongside the existing "View the website →" text link.
   Copy, disclosure, numbering, order and URLs are unchanged from
   Round 1.
+
+  SHOWCASE INTEGRATION — ROUND 3 (this pass): live iframe embedding
+  was tested first, per this round's brief — all four sites send
+  `X-Frame-Options: SAMEORIGIN`, which unconditionally blocks
+  cross-origin framing in every modern browser, so the brief's
+  automatic fallback applies: genuine animated screenshot captures.
+  Each preview panel (.sp-cycle, see js/showcase.js) now crossfades
+  through 4-5 real screenshots of real pages on the corresponding
+  live site — every route was confirmed to exist and return 200
+  before capture; nothing is a simulated transition or an invented
+  page. Panels are large (~48% of the row) and landscape, no
+  decorative browser chrome, real 8:5 screenshots throughout.
+  Respects prefers-reduced-motion (auto-cycling disabled, first
+  frame only) and pauses on hover/focus. Round 2's single static
+  homepage .jpg per site was superseded by this round's per-page
+  .webp captures and removed. Copy, disclosure, project order,
+  numbering and URLs are unchanged from Round 1.
+
+  SHOWCASE INTEGRATION — ROUND 3A (QA correction, this pass): each
+  .shot-frame-img now carries aria-hidden, kept in sync with
+  is-active by js/showcase.js — only the currently visible frame is
+  exposed to assistive technology; the other 3-4 stacked screenshots
+  per panel are aria-hidden="true" so a screen reader doesn't read
+  every frame's alt text as if all were present at once. No visual,
+  copy, timing, screenshot or URL change. (css/pages.css's
+  prefers-reduced-motion media query was also reformatted for
+  clarity — see that file's changelog note.)
 -->
 <html lang="en-SG">
 <head>
@@ -170,9 +197,13 @@
                 <p class="sp-demo">Demonstrates: a professional service website built around positioning, services, trust-building and a clear enquiry flow.</p>
                 <a class="learn sp-link" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" aria-label="View the Second Desk website (opens in a new tab)">View the website →</a>
               </div>
-              <a class="sp-preview" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" aria-label="Screenshot of the Second Desk homepage — opens the live website in a new tab">
-                <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                <div class="shot-frame"><img src="../assets/showcase/second-desk.jpg" alt="Homepage of Second Desk, a fictional business-advisory website" width="960" height="600" loading="lazy"></div>
+              <a class="sp-preview sp-cycle" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Second Desk's Home, About, How We Work and Contact pages — opens the live website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/second-desk-home.webp" alt="Second Desk — Home page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-about.webp" alt="Second Desk — About page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-how-we-work.webp" alt="Second Desk — How We Work page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-contact.webp" alt="Second Desk — Contact page" width="1200" height="750" loading="lazy">
+                </div>
               </a>
             </div>
           </div>
@@ -188,9 +219,14 @@
                 <p class="sp-demo">Demonstrates: a product-led retail website with browsing, categories, search, filters, product pages, cart and demo checkout.</p>
                 <a class="learn sp-link" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" aria-label="View the Shelf Life website (opens in a new tab)">View the website →</a>
               </div>
-              <a class="sp-preview" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" aria-label="Screenshot of the Shelf Life homepage — opens the live website in a new tab">
-                <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                <div class="shot-frame"><img src="../assets/showcase/shelf-life.jpg" alt="Homepage of Shelf Life, a fictional collector-toy retail website" width="960" height="600" loading="lazy"></div>
+              <a class="sp-preview sp-cycle" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Shelf Life's Home, Shop, Figures category, a product page and Cart — opens the live website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/shelf-life-home.webp" alt="Shelf Life — Home page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-shop.webp" alt="Shelf Life — Shop page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-category.webp" alt="Shelf Life — Figures category page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-product.webp" alt="Shelf Life — Orbit Cat product page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-cart.webp" alt="Shelf Life — Cart page" width="1200" height="750" loading="lazy">
+                </div>
               </a>
             </div>
           </div>
@@ -206,9 +242,13 @@
                 <p class="sp-demo">Demonstrates: a visually-led F&amp;B website designed to communicate a physical experience through the screen.</p>
                 <a class="learn sp-link" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" aria-label="View the Fern &amp; Beans Café website (opens in a new tab)">View the website →</a>
               </div>
-              <a class="sp-preview" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" aria-label="Screenshot of the Fern &amp; Beans Café homepage — opens the live website in a new tab">
-                <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                <div class="shot-frame"><img src="../assets/showcase/fern-and-beans.jpg" alt="Homepage of Fern &amp; Beans Café, a fictional café website" width="960" height="600" loading="lazy"></div>
+              <a class="sp-preview sp-cycle" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Fern &amp; Beans Café's Home, Menu, About and Visit pages — opens the live website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/fern-and-beans-home.webp" alt="Fern &amp; Beans Café — Home page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-menu.webp" alt="Fern &amp; Beans Café — Menu page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-about.webp" alt="Fern &amp; Beans Café — About page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-visit.webp" alt="Fern &amp; Beans Café — Visit page" width="1200" height="750" loading="lazy">
+                </div>
               </a>
             </div>
           </div>
@@ -224,9 +264,14 @@
                 <p class="sp-demo">Demonstrates: an editorial, visual-first website with portfolio presentation and project storytelling.</p>
                 <a class="learn sp-link" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" aria-label="View the Ninth Draft website (opens in a new tab)">View the website →</a>
               </div>
-              <a class="sp-preview" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" aria-label="Screenshot of the Ninth Draft homepage — opens the live website in a new tab">
-                <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                <div class="shot-frame"><img src="../assets/showcase/ninth-draft.jpg" alt="Homepage of Ninth Draft, a fictional creative studio website" width="960" height="600" loading="lazy"></div>
+              <a class="sp-preview sp-cycle" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Ninth Draft's Home, Work, Studio, Services and Contact pages — opens the live website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/ninth-draft-home.webp" alt="Ninth Draft — Home page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-work.webp" alt="Ninth Draft — Work page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-studio.webp" alt="Ninth Draft — Studio page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-services.webp" alt="Ninth Draft — Services page" width="1200" height="750" loading="lazy">
+                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-contact.webp" alt="Ninth Draft — Start a Project page" width="1200" height="750" loading="lazy">
+                </div>
               </a>
             </div>
           </div>
@@ -312,6 +357,7 @@
 <script src="../js/main.js"></script>
 <script src="../js/motion.js"></script>
 <script src="../js/forms.js"></script>
+<script src="../js/showcase.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
