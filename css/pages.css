@@ -78,48 +78,25 @@
 .showcase-project .sp-demo{ font-size:13.5px; opacity:.6; max-width:48ch; margin-bottom:18px; }
 .showcase-project .sp-link.disabled{ opacity:.5; font-style:italic; border-bottom:none; }
 
-/* preview panel — a small "browser" treatment, same visual language
-   as the homepage's Digital Enablement mockup, always visible here
-   (not a scroll-triggered overlay) since it is primary content on
-   this page rather than a decorative accent */
-.sp-preview{ border:1px solid var(--line-strong); background:var(--c-cream); color:var(--c-ink); min-height:190px; }
+/* preview panel — Round 2: real screenshots of the four live sites,
+   not stylised mockups. Same consistent treatment for all four: one
+   thin border, a minimal browser-chrome bar (three dots only — no
+   fake address bar, no invented UI), then the screenshot itself
+   fills the rest at a fixed 8:5 aspect ratio (the screenshots'
+   native ratio, so nothing is cropped or distorted). The screenshot
+   is the dominant visual element — no overlay, no heavy shadow. The
+   whole panel is a real link to the live site, mirroring the "View
+   the website →" text link beside it. */
+.sp-preview{ border:1px solid var(--line-strong); background:var(--c-cream); color:var(--c-ink); display:block; text-decoration:none; }
 .sp-preview .bar{ display:flex; align-items:center; gap:4px; padding:7px 9px; border-bottom:1px solid var(--line); }
 .sp-preview .dot{ width:5px; height:5px; border-radius:50%; background:var(--line-strong); }
-.sp-preview .navrow{ display:flex; gap:8px; padding:7px 10px; border-bottom:1px solid var(--line); }
-.sp-preview .navrow .ni{ width:16px; height:3px; background:var(--line-strong); }
-.sp-preview .body{ padding:16px; min-height:130px; }
-
-/* 01 Second Desk — calm, centred, generous whitespace (advisory) */
-.sp-preview--advisory .body{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px; min-height:150px; }
-.sp-preview--advisory .ph{ height:8px; width:60%; background:var(--c-navy); opacity:.55; }
-.sp-preview--advisory .pl{ height:4px; width:75%; background:var(--line-strong); }
-.sp-preview--advisory .pcta{ margin-top:8px; width:70px; height:10px; background:var(--c-navy); opacity:.85; }
-
-/* 02 Shelf Life — product grid, energetic (retail) */
-.sp-preview--retail .pgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:10px; }
-.sp-preview--retail .psw{ aspect-ratio:1; background:var(--c-gold); opacity:.85; display:block; }
-.sp-preview--retail .psw:nth-child(2){ background:var(--teal-acc); opacity:.8; }
-.sp-preview--retail .psw:nth-child(3){ background:var(--c-navy); opacity:.5; }
-.sp-preview--retail .psw:nth-child(4){ background:var(--c-navy); opacity:.28; }
-.sp-preview--retail .psw:nth-child(5){ background:var(--c-gold); opacity:.5; }
-.sp-preview--retail .psw:nth-child(6){ background:var(--teal-acc); opacity:.45; }
-.sp-preview--retail .ptag{ width:44px; height:9px; background:var(--c-ink); opacity:.5; }
-
-/* 03 Fern & Beans — atmospheric, circular motif (F&B) */
-.sp-preview--fnb .body{ display:flex; flex-direction:column; align-items:center; gap:9px; padding-top:12px; }
-.sp-preview--fnb svg{ width:52px; height:52px; }
-.sp-preview--fnb .pline{ height:4px; background:var(--line-strong); }
-.sp-preview--fnb .pline.w1{ width:70%; } .sp-preview--fnb .pline.w2{ width:55%; } .sp-preview--fnb .pline.w3{ width:62%; }
-
-/* 04 Ninth Draft — editorial, asymmetric split (creative) */
-.sp-preview--creative .body{ padding:0; position:relative; min-height:150px; overflow:hidden; }
-.sp-preview--creative .diag{ position:absolute; inset:0; background:var(--c-navy); clip-path:polygon(0 0, 62% 0, 38% 100%, 0 100%); }
-.sp-preview--creative .plabel{ position:absolute; left:16px; bottom:14px; font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:#F2ECDD; opacity:.9; }
-.sp-preview--creative .pidx{ position:absolute; right:14px; bottom:8px; font-family:var(--font-mono); font-size:30px; opacity:.16; }
+.sp-preview .shot-frame{ display:block; width:100%; aspect-ratio:8/5; overflow:hidden; background:var(--line); }
+.sp-preview .shot-frame img{ display:block; width:100%; height:100%; object-fit:cover; }
+.sp-preview.disabled{ pointer-events:none; }
 
 @media (max-width:900px){
   .showcase-project .sp-body{ grid-template-columns:1fr; }
-  .sp-preview{ max-width:340px; }
+  .sp-preview{ max-width:420px; }
 }
 
 #showcase-same-process .statement-block{ max-width:760px; }
