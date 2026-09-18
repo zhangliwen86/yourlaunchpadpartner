@@ -129,6 +129,30 @@
     statusEl.className = 'form-status';
   }
 
+  /* ---------- GA4 lead event ----------
+     Fires exactly one event — generate_lead — on a genuinely
+     successful submission only (see the success branch below).
+     lead_type is read directly from the #interest select (never
+     from FormData, so no free-text or PII field can ever reach
+     this), and is checked against this fixed allowlist before
+     being sent: an unexpected value is silently not sent rather
+     than passed through. gtag may not exist (blocked, ad-blocker,
+     GA4 script failed to load) — this is guarded and wrapped so an
+     analytics failure can never affect the success message, the
+     form reset, or the rest of the submit flow. */
+  var GA4_LEAD_TYPES = ['accounting', 'grants', 'automation', 'workshop', 'unsure'];
+
+  function trackLeadEvent(leadType){
+    if (GA4_LEAD_TYPES.indexOf(leadType) === -1) return; // not an allowed value — event not sent
+    try {
+      if (typeof window.gtag === 'function'){
+        window.gtag('event', 'generate_lead', { lead_type: leadType });
+      }
+    } catch (e){
+      // analytics must never break the form
+    }
+  }
+
   /* ---------- submission adapter ----------
      Submits inline via fetch() so the visitor stays on the Contact
      page rather than being redirected to Formspree's own generic
@@ -185,6 +209,8 @@
       submitBtn.textContent = 'Send your message';
 
       if (result.status === 'success'){
+        var interestEl = document.getElementById('interest');
+        trackLeadEvent(interestEl ? interestEl.value : '');
         showStatus('success', "Thank you. Your message has been sent. We'll be in touch.");
         form.reset();
         return;
