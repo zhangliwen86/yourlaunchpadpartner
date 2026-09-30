@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fold &amp; Crumb · A fictional bakery concept</title>
+  <meta name="description" content="Fold &amp; Crumb is a fictional neighbourhood bakery concept for pastries and celebration bakes, created for the Your Launchpad Partner workshop showcase.">
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="fonts/fraunces/Fraunces-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/figtree/Figtree-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="wordmark" href="#top" aria-label="Fold and Crumb, back to top">Fold <span class="wordmark__amp">&amp;</span> Crumb</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#pastries">Pastries</a></li>
+          <li><a href="#celebration">Celebration bakes</a></li>
+        </ul>
+        <a class="button button--cherry button--small" href="#brief"><span class="hide-narrow">Create your celebration brief</span><span class="show-narrow">Create brief</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Opening screen -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <p class="honesty-strip">A fictional bakery concept for the Your Launchpad Partner workshop showcase.</p>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">A neighbourhood bakery concept</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line">Flaky for today.</span>
+            <span class="hero__line hero__line--cherry">Frosted for the <em>big day.</em></span>
+          </h1>
+          <p class="hero__lead">Fold &amp; Crumb is a neighbourhood bakery concept for crisp, buttery pastries and joyful celebration bakes. It also helps you find the words for the bake you have in mind.</p>
+          <div class="hero__actions">
+            <a class="button button--cherry" href="#brief">Create your celebration brief</a>
+            <a class="text-link" href="#pastries">Explore the pastries <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <figure class="hero__figure">
+          <img src="images/web/h1-rainbow-cake-and-pastries-1122.jpg"
+               srcset="images/web/h1-rainbow-cake-and-pastries-760.jpg 760w, images/web/h1-rainbow-cake-and-pastries-1122.jpg 1122w"
+               sizes="(min-width: 900px) 44vw, 100vw"
+               width="1122" height="1402" fetchpriority="high"
+               alt="Illustrative concept: a rainbow-layered cheesecake with one slice cut away sits on a cream cake stand, behind a tray holding a croissant, a cherry danish and a chocolate babka knot.">
+          <figcaption class="image-label">AI-generated illustrative concept</figcaption>
+        </figure>
+      </div>
+      <div class="layers layers--hero" aria-hidden="true"></div>
+    </section>
+
+    <!-- Fold / Crumb introduction -->
+    <section class="split" aria-label="Two sides of Fold and Crumb">
+      <div class="split__half split__half--fold">
+        <p class="split__word" aria-hidden="true">Fold</p>
+        <h2 class="split__title">Pastries for an ordinary day, made better</h2>
+        <p>Layered, flaky pastries to get to know one by one: how each looks on the outside, and what you'd find inside.</p>
+        <a class="text-link" href="#pastries">Meet the pastries <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="split__half split__half--crumb">
+        <p class="split__word" aria-hidden="true">Crumb</p>
+        <h2 class="split__title">Celebration bakes for the moments you mark</h2>
+        <p>Four decorative directions and four flavour moods to help you describe the cake you're picturing, without needing baking terms.</p>
+        <a class="text-link" href="#celebration">Compare celebration styles <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- Pastry counter -->
+    <section class="pastries" id="pastries" aria-labelledby="pastries-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">Fold · Pastries</p>
+          <h2 class="section-title" id="pastries-title">Meet the pastries</h2>
+          <p class="section-intro">For an everyday treat or a small gift: get to know each pastry before you choose. Look at the outside, then look inside.</p>
+        </header>
+
+        <div class="counter">
+          <div class="counter__tabs js-only" role="tablist" aria-label="Pastries" aria-orientation="vertical">
+            <button type="button" role="tab" id="tab-p1" aria-controls="panel-p1" aria-selected="true"><span class="counter__num" aria-hidden="true">01</span> Butter croissant</button>
+            <button type="button" role="tab" id="tab-p2" aria-controls="panel-p2" aria-selected="false" tabindex="-1"><span class="counter__num" aria-hidden="true">02</span> Pandan kaya twist</button>
+            <button type="button" role="tab" id="tab-p3" aria-controls="panel-p3" aria-selected="false" tabindex="-1"><span class="counter__num" aria-hidden="true">03</span> Cherry cream danish</button>
+            <button type="button" role="tab" id="tab-p4" aria-controls="panel-p4" aria-selected="false" tabindex="-1"><span class="counter__num" aria-hidden="true">04</span> Dark chocolate babka knot</button>
+          </div>
+
+          <div class="counter__panels">
+            <article class="pastry" id="panel-p1" aria-labelledby="pastry-name-p1">
+              <figure class="pastry__figure">
+                <div class="pastry__frame">
+                  <img src="images/web/p1-butter-croissant-1536.jpg" width="1536" height="1024" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a whole butter croissant beside a cut piece showing its airy interior, on a cream plate.">
+                </div>
+                <div class="view-toggle js-only" role="group" aria-label="View of the butter croissant">
+                  <button type="button" data-view="whole" aria-pressed="true">Whole</button>
+                  <button type="button" data-view="inside" aria-pressed="false">Inside</button>
+                </div>
+                <figcaption class="image-label"><span class="view-caption">Whole and cut, side by side</span> · AI-generated illustrative concept</figcaption>
+              </figure>
+              <div class="pastry__notes">
+                <h3 class="pastry__name" id="pastry-name-p1">Butter croissant</h3>
+                <dl>
+                  <div><dt>Outside</dt><dd>Deep-bronze, crackly-looking layers curving to two tapered ends.</dd></div>
+                  <div><dt>Inside</dt><dd>Open, honeycomb-like pockets framed by thin, crisp layers.</dd></div>
+                  <div><dt>Flavour inspiration</dt><dd>The classic: rich and buttery, with a toasty edge from the darker folds.</dd></div>
+                  <div><dt>Nice for</dt><dd>A slow morning, or a simple treat to share.</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <article class="pastry" id="panel-p2" aria-labelledby="pastry-name-p2">
+              <figure class="pastry__figure">
+                <div class="pastry__frame">
+                  <img src="images/web/p2-pandan-kaya-twist-1536.jpg" width="1536" height="1024" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a long pandan kaya twist with green swirls in each turn, beside a cut piece showing green-streaked layers, on a cream plate.">
+                </div>
+                <div class="view-toggle js-only" role="group" aria-label="View of the pandan kaya twist">
+                  <button type="button" data-view="whole" aria-pressed="true">Whole</button>
+                  <button type="button" data-view="inside" aria-pressed="false">Inside</button>
+                </div>
+                <figcaption class="image-label"><span class="view-caption">Whole and cut, side by side</span> · AI-generated illustrative concept</figcaption>
+              </figure>
+              <div class="pastry__notes">
+                <h3 class="pastry__name" id="pastry-name-p2">Pandan kaya twist</h3>
+                <dl>
+                  <div><dt>Outside</dt><dd>A long, flaky twist, bronzed on every turn, with green showing between the folds.</dd></div>
+                  <div><dt>Inside</dt><dd>Soft, pale layers with a green ribbon spiralling through.</dd></div>
+                  <div><dt>Flavour inspiration</dt><dd>Inspired by kaya toast: fragrant pandan with a gentle coconut-custard sweetness.</dd></div>
+                  <div><dt>Nice for</dt><dd>An afternoon kopi break.</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <article class="pastry" id="panel-p3" aria-labelledby="pastry-name-p3">
+              <figure class="pastry__figure">
+                <div class="pastry__frame">
+                  <img src="images/web/p3-cherry-cream-danish-1536.jpg" width="1536" height="1024" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a square cherry cream danish with glossy cherries on a creamy centre, beside a cut half, on a cream plate.">
+                </div>
+                <div class="view-toggle js-only" role="group" aria-label="View of the cherry cream danish">
+                  <button type="button" data-view="whole" aria-pressed="true">Whole</button>
+                  <button type="button" data-view="inside" aria-pressed="false">Inside</button>
+                </div>
+                <figcaption class="image-label"><span class="view-caption">Whole and cut, side by side</span> · AI-generated illustrative concept</figcaption>
+              </figure>
+              <div class="pastry__notes">
+                <h3 class="pastry__name" id="pastry-name-p3">Cherry cream danish</h3>
+                <dl>
+                  <div><dt>Outside</dt><dd>A crisp, square pastry frame folded around a soft centre.</dd></div>
+                  <div><dt>Inside</dt><dd>Many thin layers beneath a creamy middle and glossy cherries.</dd></div>
+                  <div><dt>Flavour inspiration</dt><dd>Bright, tangy cherry against a mellow, creamy centre.</dd></div>
+                  <div><dt>Nice for</dt><dd>A bright treat that feels like a small celebration.</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <article class="pastry" id="panel-p4" aria-labelledby="pastry-name-p4">
+              <figure class="pastry__figure">
+                <div class="pastry__frame">
+                  <img src="images/web/p4-dark-chocolate-babka-knot-1536.jpg" width="1536" height="1024" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a glossy dark chocolate babka knot beside a cut piece showing chocolate swirls through soft layers, on a cream plate.">
+                </div>
+                <div class="view-toggle js-only" role="group" aria-label="View of the dark chocolate babka knot">
+                  <button type="button" data-view="whole" aria-pressed="true">Whole</button>
+                  <button type="button" data-view="inside" aria-pressed="false">Inside</button>
+                </div>
+                <figcaption class="image-label"><span class="view-caption">Whole and cut, side by side</span> · AI-generated illustrative concept</figcaption>
+              </figure>
+              <div class="pastry__notes">
+                <h3 class="pastry__name" id="pastry-name-p4">Dark chocolate babka knot</h3>
+                <dl>
+                  <div><dt>Outside</dt><dd>A tight, glossy knot with crunchy-looking chocolate edges.</dd></div>
+                  <div><dt>Inside</dt><dd>Tender, bread-like layers ribboned with dark chocolate swirls.</dd></div>
+                  <div><dt>Flavour inspiration</dt><dd>Deep, bittersweet cocoa wrapped in soft, lightly sweet dough.</dd></div>
+                  <div><dt>Nice for</dt><dd>Pulling apart and sharing at a small gathering.</dd></div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="fine-print">Notes describe the illustrated concepts only. They are not recipes, ingredient lists, or allergen or dietary information, and the pastries shown are not products available to order.</p>
+      </div>
+      <div class="layers layers--pastries" aria-hidden="true"></div>
+    </section>
+
+    <!-- Celebration styles -->
+    <section class="celebration" id="celebration" aria-labelledby="celebration-title">
+      <div class="container">
+        <header class="section-head section-head--right">
+          <p class="section-label">Crumb · Celebration bakes</p>
+          <h2 class="section-title" id="celebration-title">Picture the celebration</h2>
+          <p class="section-intro">Not sure how to describe the cake you're imagining? Compare four decorative directions and four flavour moods, then take your choices into a sample brief.</p>
+        </header>
+
+        <div class="styles">
+          <div class="styles__preview">
+            <figure class="preview" data-stage="c1">
+              <div class="preview__stage">
+                <div class="preview__stack">
+                  <img class="preview__img" data-style="c1" src="images/web/c1-retro-piped-cake-1122.jpg"
+                       srcset="images/web/c1-retro-piped-cake-560.jpg 560w, images/web/c1-retro-piped-cake-1122.jpg 1122w"
+                       sizes="(min-width: 900px) 34vw, 72vw" width="1122" height="1402" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a cream cake on a stand with shell-piped borders, draped piping swags and five glossy cherries.">
+                  <img class="preview__img" data-style="c2" src="images/web/c2-rainbow-cheesecake-1122.jpg"
+                       srcset="images/web/c2-rainbow-cheesecake-560.jpg 560w, images/web/c2-rainbow-cheesecake-1122.jpg 1122w"
+                       sizes="(min-width: 900px) 34vw, 72vw" width="1122" height="1402" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a cheesecake with pastel rainbow bands shown where a slice is cut away, topped with a ring of berries, fruit and piped cream.">
+                  <img class="preview__img" data-style="c3" src="images/web/c3-berry-layer-cake-1122.jpg"
+                       srcset="images/web/c3-berry-layer-cake-560.jpg 560w, images/web/c3-berry-layer-cake-1122.jpg 1122w"
+                       sizes="(min-width: 900px) 34vw, 72vw" width="1122" height="1402" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a semi-bare layer cake with a slice removed, showing sponge layers with berry-streaked cream, piled with berries on top.">
+                  <img class="preview__img" data-style="c4" src="images/web/c4-confetti-celebration-cake-1122.jpg"
+                       srcset="images/web/c4-confetti-celebration-cake-560.jpg 560w, images/web/c4-confetti-celebration-cake-1122.jpg 1122w"
+                       sizes="(min-width: 900px) 34vw, 72vw" width="1122" height="1402" loading="lazy" decoding="async"
+                       alt="Illustrative concept: a cream cake with pastel piped rosettes around the top and base, scattered with colourful sprinkles, on a pink background.">
+                  <div class="preview__img montage" data-style="unsure" role="img"
+                       aria-label="All four illustrative style concepts together: retro piped, rainbow cheesecake, berry layers and confetti celebration.">
+                    <img src="images/web/c1-retro-piped-cake-560.jpg" width="560" height="700" loading="lazy" decoding="async" alt="">
+                    <img src="images/web/c2-rainbow-cheesecake-560.jpg" width="560" height="700" loading="lazy" decoding="async" alt="">
+                    <img src="images/web/c3-berry-layer-cake-560.jpg" width="560" height="700" loading="lazy" decoding="async" alt="">
+                    <img src="images/web/c4-confetti-celebration-cake-560.jpg" width="560" height="700" loading="lazy" decoding="async" alt="">
+                  </div>
+                </div>
+              </div>
+              <figcaption class="image-label">Style illustrated on a celebration cake · AI-generated illustrative concept</figcaption>
+            </figure>
+          </div>
+
+          <div class="styles__controls">
+            <div class="choice-readout js-only" aria-live="polite">
+              <p class="choice-readout__state" id="style-state">Previewing: Retro piped (not chosen)</p>
+              <p class="choice-readout__desc" id="style-desc">Vintage-style piping: shell borders, draped swags and glossy cherries on a smooth cream finish.</p>
+            </div>
+
+            <fieldset class="options options--styles">
+              <legend class="options__legend">Visual style</legend>
+              <label class="option" data-swatch="c1"><input type="radio" name="x-style" value="c1"><span class="option__name">Retro piped</span><span class="option__hint nojs-only">Shell borders, draped swags and glossy cherries.</span></label>
+              <label class="option" data-swatch="c2"><input type="radio" name="x-style" value="c2"><span class="option__name">Rainbow cheesecake</span><span class="option__hint nojs-only">Soft rainbow bands and a ring of fruit.</span></label>
+              <label class="option" data-swatch="c3"><input type="radio" name="x-style" value="c3"><span class="option__name">Berry layers</span><span class="option__hint nojs-only">Semi-bare layers and piled berries.</span></label>
+              <label class="option" data-swatch="c4"><input type="radio" name="x-style" value="c4"><span class="option__name">Confetti celebration</span><span class="option__hint nojs-only">Pastel rosettes and sprinkles.</span></label>
+              <label class="option option--wide" data-swatch="unsure"><input type="radio" name="x-style" value="unsure"><span class="option__name">Not sure yet</span></label>
+            </fieldset>
+
+            <fieldset class="options options--flavours">
+              <legend class="options__legend">Flavour direction</legend>
+              <label class="option"><input type="radio" name="x-flavour" value="fruity"><span class="option__name">Bright &amp; fruity</span></label>
+              <label class="option"><input type="radio" name="x-flavour" value="chocolatey"><span class="option__name">Rich &amp; chocolatey</span></label>
+              <label class="option"><input type="radio" name="x-flavour" value="creamy"><span class="option__name">Soft &amp; creamy</span></label>
+              <label class="option"><input type="radio" name="x-flavour" value="pandan"><span class="option__name">Pandan &amp; coconut-inspired</span></label>
+              <label class="option option--wide"><input type="radio" name="x-flavour" value="unsure"><span class="option__name">Not sure yet</span></label>
+            </fieldset>
+            <p class="choice-readout__desc choice-readout__desc--flavour js-only" id="flavour-desc" aria-live="polite">Choose a flavour mood to see how it's described.</p>
+
+            <ul class="flavour-glossary nojs-only">
+              <li><strong>Bright &amp; fruity:</strong> tangy and fresh, inspired by berries and cherries.</li>
+              <li><strong>Rich &amp; chocolatey:</strong> deep and bittersweet, inspired by dark cocoa.</li>
+              <li><strong>Soft &amp; creamy:</strong> gentle and mellow, inspired by vanilla and milk.</li>
+              <li><strong>Pandan &amp; coconut-inspired:</strong> fragrant and local-leaning, inspired by pandan and coconut.</li>
+            </ul>
+
+            <p class="fine-print">Flavour directions describe a mood, not confirmed ingredients. Style and flavour directions are starting points to discuss. This sample doesn't confirm that any combination can be made.</p>
+
+            <div class="carry js-only">
+              <p class="carry__summary" id="carry-summary">Your choices so far: style not chosen · flavour not chosen</p>
+              <button type="button" class="button button--cocoa" id="carry-button">Take this into a sample brief</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layers layers--celebration" aria-hidden="true"></div>
+    </section>
+
+    <!-- Demonstration brief -->
+    <section class="brief" id="brief" aria-labelledby="brief-title">
+      <div class="container container--narrow">
+        <header class="section-head">
+          <p class="section-label section-label--light">Demonstration</p>
+          <h2 class="section-title section-title--light" id="brief-title" tabindex="-1">Create your celebration brief</h2>
+          <p class="section-intro section-intro--light">Three short steps to describe a celebration bake in plain words, ending with a readable summary.</p>
+        </header>
+
+        <div class="brief__panel">
+          <div class="demo-notice">
+            <h3 class="demo-notice__title">Before you start: this is a demonstration</h3>
+            <ul>
+              <li>Your answers stay on this page only. Refreshing the page clears them.</li>
+              <li>Nothing is sent, booked, paid for or ordered.</li>
+              <li>Please don't enter names, contact details, event dates or other personal information.</li>
+            </ul>
+          </div>
+
+          <noscript>
+            <p class="nojs-note">The sample brief runs in your browser and needs JavaScript. It asks about the occasion (birthday, thank you, gathering, just because or not sure), the format (one celebration cake, individual bakes or not sure), a visual style and flavour direction from the options above, and an optional short note.</p>
+          </noscript>
+
+          <div class="brief-app js-only">
+            <p class="brief__status" id="brief-status" role="status"></p>
+
+            <!-- Intro -->
+            <div class="brief-intro" id="brief-intro">
+              <button type="button" class="button button--cherry" id="brief-start">Start the sample brief</button>
+            </div>
+
+            <!-- Steps -->
+            <div class="brief-flow" id="brief-flow" hidden>
+              <div class="brief-toolbar">
+                <ol class="progress" aria-label="Brief progress">
+                  <li data-step="1"><span class="progress__bar" aria-hidden="true"></span><span class="progress__text">1 · The occasion</span></li>
+                  <li data-step="2"><span class="progress__bar" aria-hidden="true"></span><span class="progress__text">2 · The direction</span></li>
+                  <li data-step="3"><span class="progress__bar" aria-hidden="true"></span><span class="progress__text">3 · Note and review</span></li>
+                </ol>
+              </div>
+
+              <div class="error-summary" id="error-summary" tabindex="-1" hidden>
+                <h3 class="error-summary__title">Please answer these before continuing</h3>
+                <ul class="error-summary__list"></ul>
+              </div>
+
+              <!-- Step 1 -->
+              <div class="step" id="step-1" data-step="1" hidden>
+                <h3 class="step__title" tabindex="-1">Step 1 of 3: The occasion</h3>
+                <fieldset class="options options--brief" id="field-occasion" aria-describedby="error-occasion">
+                  <legend class="options__legend">What's the occasion?</legend>
+                  <p class="field-error" id="error-occasion" hidden></p>
+                  <label class="option"><input type="radio" name="b-occasion" value="birthday" id="occasion-first"><span class="option__name">Birthday</span></label>
+                  <label class="option"><input type="radio" name="b-occasion" value="thanks"><span class="option__name">Thank you</span></label>
+                  <label class="option"><input type="radio" name="b-occasion" value="gathering"><span class="option__name">Gathering</span></label>
+                  <label class="option"><input type="radio" name="b-occasion" value="because"><span class="option__name">Just because</span></label>
+                  <label class="option option--wide"><input type="radio" name="b-occasion" value="unsure"><span class="option__name">Not sure</span></label>
+                </fieldset>
+                <fieldset class="options options--brief" id="field-format" aria-describedby="error-format">
+                  <legend class="options__legend">What format are you picturing?</legend>
+                  <p class="field-error" id="error-format" hidden></p>
+                  <label class="option"><input type="radio" name="b-format" value="cake" id="format-first"><span class="option__name">One celebration cake</span></label>
+                  <label class="option"><input type="radio" name="b-format" value="individual"><span class="option__name">Individual bakes</span></label>
+                  <label class="option option--wide"><input type="radio" name="b-format" value="unsure"><span class="option__name">Not sure</span></label>
+                </fieldset>
+                <div class="step__nav">
+                  <button type="button" class="button button--cherry" data-action="next">Next: the direction</button>
+                  <button type="button" class="button button--ghost" data-action="to-review" hidden>Back to review</button>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="step" id="step-2" data-step="2" hidden>
+                <h3 class="step__title" tabindex="-1">Step 2 of 3: The direction</h3>
+                <p class="format-note" id="format-note" hidden>You chose individual bakes. These pictures illustrate a decorative direction on a celebration cake, not your selected format or a promised product.</p>
+                <fieldset class="options options--brief options--thumbs" id="field-style" aria-describedby="error-style">
+                  <legend class="options__legend">Visual style</legend>
+                  <p class="field-hint">Each picture shows a style illustrated on a celebration cake (AI-generated illustrative concept).</p>
+                  <p class="field-error" id="error-style" hidden></p>
+                  <label class="option option--thumb"><input type="radio" name="b-style" value="c1" id="style-first"><img src="images/web/c1-retro-piped-cake-560.jpg" width="560" height="700" loading="lazy" alt=""><span class="option__name">Retro piped</span></label>
+                  <label class="option option--thumb"><input type="radio" name="b-style" value="c2"><img src="images/web/c2-rainbow-cheesecake-560.jpg" width="560" height="700" loading="lazy" alt=""><span class="option__name">Rainbow cheesecake</span></label>
+                  <label class="option option--thumb"><input type="radio" name="b-style" value="c3"><img src="images/web/c3-berry-layer-cake-560.jpg" width="560" height="700" loading="lazy" alt=""><span class="option__name">Berry layers</span></label>
+                  <label class="option option--thumb"><input type="radio" name="b-style" value="c4"><img src="images/web/c4-confetti-celebration-cake-560.jpg" width="560" height="700" loading="lazy" alt=""><span class="option__name">Confetti celebration</span></label>
+                  <label class="option option--thumb option--wide"><input type="radio" name="b-style" value="unsure"><span class="mini-montage" aria-hidden="true"><img src="images/web/c1-retro-piped-cake-560.jpg" alt="" loading="lazy"><img src="images/web/c2-rainbow-cheesecake-560.jpg" alt="" loading="lazy"><img src="images/web/c3-berry-layer-cake-560.jpg" alt="" loading="lazy"><img src="images/web/c4-confetti-celebration-cake-560.jpg" alt="" loading="lazy"></span><span class="option__name">Not sure yet</span></label>
+                </fieldset>
+                <fieldset class="options options--brief" id="field-flavour" aria-describedby="error-flavour">
+                  <legend class="options__legend">Flavour direction</legend>
+                  <p class="field-hint">A mood to discuss, not confirmed ingredients.</p>
+                  <p class="field-error" id="error-flavour" hidden></p>
+                  <label class="option"><input type="radio" name="b-flavour" value="fruity" id="flavour-first"><span class="option__name">Bright &amp; fruity</span></label>
+                  <label class="option"><input type="radio" name="b-flavour" value="chocolatey"><span class="option__name">Rich &amp; chocolatey</span></label>
+                  <label class="option"><input type="radio" name="b-flavour" value="creamy"><span class="option__name">Soft &amp; creamy</span></label>
+                  <label class="option"><input type="radio" name="b-flavour" value="pandan"><span class="option__name">Pandan &amp; coconut-inspired</span></label>
+                  <label class="option option--wide"><input type="radio" name="b-flavour" value="unsure"><span class="option__name">Not sure yet</span></label>
+                </fieldset>
+                <div class="step__nav">
+                  <button type="button" class="button button--cherry" data-action="next">Next: note and review</button>
+                  <button type="button" class="button button--ghost" data-action="back">Back</button>
+                  <button type="button" class="button button--ghost" data-action="to-review" hidden>Back to review</button>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="step" id="step-3" data-step="3" hidden>
+                <h3 class="step__title" tabindex="-1">Step 3 of 3: Note and review</h3>
+                <div class="field" id="field-note">
+                  <label class="field__label" for="brief-note">Anything else? <span class="field__optional">(optional)</span></label>
+                  <p class="field-hint" id="note-hint">A few words about the feeling you'd like, such as "cheerful but not too sweet-looking". Please don't include names, contact details, dates or other personal information.</p>
+                  <p class="field-error" id="error-note" hidden></p>
+                  <textarea id="brief-note" rows="3" maxlength="280" aria-describedby="note-hint note-count error-note"></textarea>
+                  <p class="field__count" id="note-count" aria-live="polite">0 of 280 characters</p>
+                </div>
+
+                <h4 class="review__title">Check your answers</h4>
+                <dl class="review" id="review"></dl>
+
+                <div class="step__nav">
+                  <button type="button" class="button button--cherry" data-action="create">Create sample brief</button>
+                  <button type="button" class="button button--ghost" data-action="back">Back</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="summary" id="brief-summary" hidden>
+              <h3 class="summary__title" tabindex="-1">Your sample celebration brief</h3>
+              <p class="summary__done">Your sample celebration brief is ready. Nothing has been sent or ordered.</p>
+              <div class="summary__body">
+                <figure class="summary__figure">
+                  <div class="summary__image" id="summary-image"></div>
+                  <figcaption class="image-label">Style illustrated on a celebration cake · AI-generated illustrative concept</figcaption>
+                </figure>
+                <div class="summary__text">
+                  <p class="summary__sentence" id="summary-sentence"></p>
+                  <p class="format-note" id="summary-format-note" hidden>You chose individual bakes. The picture illustrates a decorative direction on a celebration cake, not your selected format or a promised product.</p>
+                  <dl class="review review--summary" id="summary-list"></dl>
+                  <div class="summary__stripe" id="summary-stripe" aria-hidden="true"></div>
+                  <p class="fine-print">Style and flavour directions are starting points to discuss. This sample doesn't confirm that any combination can be made. Flavour directions describe a mood, not confirmed ingredients.</p>
+                </div>
+              </div>
+              <div class="step__nav">
+                <button type="button" class="button button--cherry" data-action="edit-all">Edit answers</button>
+              </div>
+            </div>
+
+            <!-- Start again, available once the brief has started -->
+            <div class="reset" id="reset" hidden>
+              <button type="button" class="button button--ghost" id="reset-open" aria-expanded="false" aria-controls="reset-confirm">Start again</button>
+              <div class="reset__confirm" id="reset-confirm" hidden>
+                <p id="reset-question">Start again? This clears every answer in the brief.</p>
+                <div class="reset__actions">
+                  <button type="button" class="button button--cherry" id="reset-yes">Yes, clear my answers</button>
+                  <button type="button" class="button button--ghost" id="reset-no">No, keep my answers</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="layers layers--footer" aria-hidden="true"></div>
+    <div class="container site-footer__inner">
+      <p class="site-footer__mark">Fold <span class="wordmark__amp">&amp;</span> Crumb</p>
+      <p class="site-footer__honesty">Fold &amp; Crumb is a fictional brand created for the Your Launchpad Partner workshop showcase. Images show illustrative concepts, not products available to order.</p>
+      <p class="site-footer__small">Every image on this page is an AI-generated illustrative concept. Typefaces: Fraunces and Figtree, used under the SIL Open Font License.</p>
+    </div>
+  </footer>
+</body>
+</html>

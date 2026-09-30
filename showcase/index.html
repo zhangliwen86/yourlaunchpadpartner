@@ -54,6 +54,18 @@
   copy, timing, screenshot or URL change. (css/pages.css's
   prefers-reduced-motion media query was also reformatted for
   clarity — see that file's changelog note.)
+  SHOWCASE INTEGRATION — ROUND 4 (eight examples, this pass): four more
+  fictional workshop examples added first, in the owner's order —
+  01 Morrow Delivery, 02 Petal & Poise, 03 Stillroom Studio, 04 Fold &
+  Crumb — followed by the original four, renumbered 05–08, all with the
+  same size and treatment. The new demos are static copies served from
+  /showcase/<slug>/ on this site (noindex, page-level CSP, no data
+  collection); the original four still link to their pepita.page sites.
+  Screenshots of the new demos were captured from those copies at their
+  preview paths. Extra screenshots now sit in <template class="shot-more">
+  and are only downloaded one frame ahead by js/showcase.js; the
+  disclosure wording is unchanged. Hero sub-line, H2, hero strip and
+  meta descriptions updated to the approved wording.
 -->
 <html lang="en-SG">
 <head>
@@ -69,7 +81,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Showcase — See What Can Be Built | Your Launchpad Partner</title>
-<meta name="description" content="See four illustrative websites built by Your Launchpad Partner — from consultancy and F&amp;B to retail and creative studio websites.">
+<meta name="description" content="See eight illustrative websites built by Your Launchpad Partner for fictional businesses — from a courier, florist and interior designer to a bakery, café and retailer.">
 <link rel="canonical" href="https://yourlaunchpadpartner.sg/showcase/">
 <meta name="robots" content="index, follow">
 
@@ -81,7 +93,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Your Launchpad Partner">
 <meta property="og:title" content="Showcase — See What Can Be Built | Your Launchpad Partner">
-<meta property="og:description" content="See four illustrative websites built by Your Launchpad Partner — from consultancy and F&amp;B to retail and creative studio websites.">
+<meta property="og:description" content="See eight illustrative websites built by Your Launchpad Partner for fictional businesses — from a courier, florist and interior designer to a bakery, café and retailer.">
 <meta property="og:url" content="https://yourlaunchpadpartner.sg/showcase/">
 <meta property="og:locale" content="en_SG">
 <meta name="twitter:card" content="summary">
@@ -106,7 +118,7 @@
       "@id": "https://yourlaunchpadpartner.sg/showcase/#page",
       "url": "https://yourlaunchpadpartner.sg/showcase/",
       "name": "Showcase — See What Can Be Built | Your Launchpad Partner",
-      "description": "See four illustrative websites built by Your Launchpad Partner — from consultancy and F&B to retail and creative studio websites.",
+      "description": "See eight illustrative websites built by Your Launchpad Partner for fictional businesses — from a courier, florist and interior designer to a bakery, café and retailer.",
       "isPartOf": { "@id": "https://yourlaunchpadpartner.sg/#website" }
     },
     {
@@ -159,14 +171,14 @@
       <div class="reveal">
         <p class="kicker">05 · Showcase</p>
         <h1>See what can be built.</h1>
-        <p class="sub">Before the first workshop cohort, we built a few examples ourselves — so you can see the kind of website you could create in a day.</p>
+        <p class="sub">We built these fictional examples to show different website styles, features and customer journeys.</p>
 
         <div class="hero-strip" aria-hidden="true">
           <svg viewBox="0 0 1200 90" xmlns="http://www.w3.org/2000/svg" role="presentation">
             <g class="hs-crop"><path d="M 4 20 V 6 H 18"/><path d="M 1196 20 V 6 H 1182"/></g>
             <path class="hs-line" d="M 20 46 H 1150"/>
             <circle cx="1170" cy="46" r="7" fill="none" stroke="var(--c-gold)" stroke-width="1.4" stroke-dasharray="3 3" opacity=".45"></circle>
-            <text class="hs-label" x="20" y="76">FOUR EXAMPLES. FOUR DIFFERENT KINDS OF BUSINESS.</text>
+            <text class="hs-label" x="20" y="76">EIGHT EXAMPLES. EIGHT DIFFERENT KINDS OF BUSINESS.</text>
           </svg>
         </div>
       </div>
@@ -186,101 +198,207 @@
     </div>
   </section>
 
-  <!-- ============ FOUR PROJECTS ============ -->
+  <!-- ============ EIGHT PROJECTS ============ -->
   <section class="section mode-navy" id="showcase-projects" aria-label="Demonstration websites">
     <div class="shell grid12">
       <div class="col-idx"><p class="kicker reveal">The examples</p></div>
       <div class="col-main reveal">
-        <h2>Four businesses. Four different websites.</h2>
+        <h2>Different businesses. Different possibilities.</h2>
         <p style="opacity:.75; font-size:15.5px; max-width:56ch;">Different businesses need their websites to do different things. Here's what that looks like in practice.</p>
 
         <div class="sp-list">
 
-          <!-- 01 SECOND DESK -->
+          <!-- 01 MORROW DELIVERY -->
           <div class="showcase-project">
-            <div class="sp-num" data-of="/ 04">01</div>
+            <div class="sp-num" data-of="/ 08">01</div>
+            <div class="sp-body">
+              <div>
+                <p class="sp-category">Courier / delivery services</p>
+                <h3 class="sp-name">Morrow Delivery</h3>
+                <p class="sp-desc">A fictional Singapore courier for same-day parcels, scheduled drop-offs and regular business runs.</p>
+                <p class="sp-demo">Demonstrates: clear service information, a video hero with playback controls and a guided delivery planner.</p>
+                <a class="learn sp-link" href="/showcase/morrow-delivery/" target="_blank" rel="noopener" aria-label="View the Morrow Delivery demo website (opens in a new tab)">View the demo website →</a>
+              </div>
+              <a class="sp-preview sp-cycle" href="/showcase/morrow-delivery/" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Morrow Delivery’s Home, Services, For Businesses, Delivery planner and About pages — opens the demo website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/morrow-delivery-home.webp" alt="Morrow Delivery — Home page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/morrow-delivery-services.webp" alt="Morrow Delivery — Services page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/morrow-delivery-businesses.webp" alt="Morrow Delivery — For Businesses page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/morrow-delivery-planner.webp" alt="Morrow Delivery — Delivery planner (demo), step 1" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/morrow-delivery-about.webp" alt="Morrow Delivery — About page" width="1200" height="750">
+                  </template>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- 02 PETAL &amp; POISE -->
+          <div class="showcase-project">
+            <div class="sp-num" data-of="/ 08">02</div>
+            <div class="sp-body">
+              <div>
+                <p class="sp-category">Boutique florist</p>
+                <h3 class="sp-name">Petal &amp; Poise</h3>
+                <p class="sp-desc">A fictional boutique florist whose website starts from the feeling a bouquet should have, not the flower names.</p>
+                <p class="sp-demo">Demonstrates: floral art direction, interactive flower details and a guided bouquet brief.</p>
+                <a class="learn sp-link" href="/showcase/petal-and-poise/" target="_blank" rel="noopener" aria-label="View the Petal &amp; Poise demo website (opens in a new tab)">View the demo website →</a>
+              </div>
+              <a class="sp-preview sp-cycle" href="/showcase/petal-and-poise/" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Petal &amp; Poise’s home page, a flower close-up, the mood choices, the bouquet brief and a completed brief — opens the demo website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/petal-and-poise-home.webp" alt="Petal &amp; Poise — Home page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/petal-and-poise-flower-detail.webp" alt="Petal &amp; Poise — Home page with a flower close-up open" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/petal-and-poise-moods.webp" alt="Petal &amp; Poise — Mood choices on the home page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/petal-and-poise-brief.webp" alt="Petal &amp; Poise — Bouquet brief (demo), step 1" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/petal-and-poise-brief-complete.webp" alt="Petal &amp; Poise — Completed sample bouquet brief" width="1200" height="750">
+                  </template>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- 03 STILLROOM STUDIO -->
+          <div class="showcase-project">
+            <div class="sp-num" data-of="/ 08">03</div>
+            <div class="sp-body">
+              <div>
+                <p class="sp-category">Interior design / HDB resale homes</p>
+                <h3 class="sp-name">Stillroom Studio</h3>
+                <p class="sp-desc">A fictional interior design studio for 4-room and 5-room HDB resale flats, shaped around storage and everyday routines.</p>
+                <p class="sp-demo">Demonstrates: room-concept comparison, design-detail hotspots and a guided space brief.</p>
+                <a class="learn sp-link" href="/showcase/stillroom-studio/" target="_blank" rel="noopener" aria-label="View the Stillroom Studio demo website (opens in a new tab)">View the demo website →</a>
+              </div>
+              <a class="sp-preview sp-cycle" href="/showcase/stillroom-studio/" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Stillroom Studio’s home page, the room-concept comparison, the kitchen design details and the space brief — opens the demo website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/stillroom-studio-home.webp" alt="Stillroom Studio — Home page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/stillroom-studio-compare.webp" alt="Stillroom Studio — Room-concept comparison on the home page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/stillroom-studio-kitchen-details.webp" alt="Stillroom Studio — Spaces page, kitchen design details" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/stillroom-studio-brief.webp" alt="Stillroom Studio — Space brief (demo), step 1" width="1200" height="750">
+                  </template>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- 04 FOLD &amp; CRUMB -->
+          <div class="showcase-project">
+            <div class="sp-num" data-of="/ 08">04</div>
+            <div class="sp-body">
+              <div>
+                <p class="sp-category">Bakery / celebration bakes</p>
+                <h3 class="sp-name">Fold &amp; Crumb</h3>
+                <p class="sp-desc">A fictional neighbourhood bakery concept for crisp pastries and joyful celebration bakes.</p>
+                <p class="sp-demo">Demonstrates: pastry Whole/Inside views, cake-style and flavour exploration, and a celebration brief that carries selected choices forward.</p>
+                <a class="learn sp-link" href="/showcase/fold-and-crumb/" target="_blank" rel="noopener" aria-label="View the Fold &amp; Crumb demo website (opens in a new tab)">View the demo website →</a>
+              </div>
+              <a class="sp-preview sp-cycle" href="/showcase/fold-and-crumb/" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Fold &amp; Crumb’s home page, the pastry Inside view, the cake-style explorer and a completed celebration brief — opens the demo website in a new tab">
+                <div class="shot-frame">
+                  <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/fold-and-crumb-home.webp" alt="Fold &amp; Crumb — Home page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fold-and-crumb-pastries.webp" alt="Fold &amp; Crumb — Pastries section, Inside view" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fold-and-crumb-celebration.webp" alt="Fold &amp; Crumb — Celebration explorer showing all four cake styles" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fold-and-crumb-brief-summary.webp" alt="Fold &amp; Crumb — Completed sample celebration brief" width="1200" height="750">
+                  </template>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- 05 SECOND DESK -->
+          <div class="showcase-project">
+            <div class="sp-num" data-of="/ 08">05</div>
             <div class="sp-body">
               <div>
                 <p class="sp-category">Business advisory / consultancy</p>
                 <h3 class="sp-name">Second Desk</h3>
                 <p class="sp-desc">A fictional founder-led advisory practice for Singapore SME owners.</p>
                 <p class="sp-demo">Demonstrates: a professional service website built around positioning, services, trust-building and a clear enquiry flow.</p>
-                <a class="learn sp-link" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" aria-label="View the Second Desk website (opens in a new tab)">View the website →</a>
+                <a class="learn sp-link" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" aria-label="View the Second Desk demo website (opens in a new tab)">View the demo website →</a>
               </div>
-              <a class="sp-preview sp-cycle" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Second Desk's Home, About, How We Work and Contact pages — opens the live website in a new tab">
+              <a class="sp-preview sp-cycle" href="https://second-desk-2ecd.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Second Desk’s Home, About, How We Work and Contact pages — opens the demo website in a new tab">
                 <div class="shot-frame">
                   <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/second-desk-home.webp" alt="Second Desk — Home page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-about.webp" alt="Second Desk — About page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-how-we-work.webp" alt="Second Desk — How We Work page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-contact.webp" alt="Second Desk — Contact page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-about.webp" alt="Second Desk — About page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-how-we-work.webp" alt="Second Desk — How We Work page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/second-desk-contact.webp" alt="Second Desk — Contact page" width="1200" height="750">
+                  </template>
                 </div>
               </a>
             </div>
           </div>
 
-          <!-- 02 SHELF LIFE -->
+          <!-- 06 SHELF LIFE -->
           <div class="showcase-project">
-            <div class="sp-num" data-of="/ 04">02</div>
+            <div class="sp-num" data-of="/ 08">06</div>
             <div class="sp-body">
               <div>
                 <p class="sp-category">Collector toys / pop-culture retail</p>
                 <h3 class="sp-name">Shelf Life</h3>
                 <p class="sp-desc">A fictional collector-toy store built around discovery, products and the joy of collecting.</p>
                 <p class="sp-demo">Demonstrates: a product-led retail website with browsing, categories, search, filters, product pages, cart and demo checkout.</p>
-                <a class="learn sp-link" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" aria-label="View the Shelf Life website (opens in a new tab)">View the website →</a>
+                <a class="learn sp-link" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" aria-label="View the Shelf Life demo website (opens in a new tab)">View the demo website →</a>
               </div>
-              <a class="sp-preview sp-cycle" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Shelf Life's Home, Shop, Figures category, a product page and Cart — opens the live website in a new tab">
+              <a class="sp-preview sp-cycle" href="https://shelf-life-ef35.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Shelf Life’s Home, Shop, Figures category, a product page and Cart — opens the demo website in a new tab">
                 <div class="shot-frame">
                   <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/shelf-life-home.webp" alt="Shelf Life — Home page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-shop.webp" alt="Shelf Life — Shop page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-category.webp" alt="Shelf Life — Figures category page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-product.webp" alt="Shelf Life — Orbit Cat product page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-cart.webp" alt="Shelf Life — Cart page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-shop.webp" alt="Shelf Life — Shop page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-category.webp" alt="Shelf Life — Figures category page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-product.webp" alt="Shelf Life — Orbit Cat product page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/shelf-life-cart.webp" alt="Shelf Life — Cart page" width="1200" height="750">
+                  </template>
                 </div>
               </a>
             </div>
           </div>
 
-          <!-- 03 FERN & BEANS CAFÉ -->
+          <!-- 07 FERN & BEANS CAFÉ -->
           <div class="showcase-project">
-            <div class="sp-num" data-of="/ 04">03</div>
+            <div class="sp-num" data-of="/ 08">07</div>
             <div class="sp-body">
               <div>
                 <p class="sp-category">F&amp;B / café</p>
                 <h3 class="sp-name">Fern &amp; Beans Café</h3>
                 <p class="sp-desc">A fictional café website designed around atmosphere, menu discovery and brand experience.</p>
                 <p class="sp-demo">Demonstrates: a visually-led F&amp;B website designed to communicate a physical experience through the screen.</p>
-                <a class="learn sp-link" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" aria-label="View the Fern &amp; Beans Café website (opens in a new tab)">View the website →</a>
+                <a class="learn sp-link" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" aria-label="View the Fern &amp; Beans Café demo website (opens in a new tab)">View the demo website →</a>
               </div>
-              <a class="sp-preview sp-cycle" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Fern &amp; Beans Café's Home, Menu, About and Visit pages — opens the live website in a new tab">
+              <a class="sp-preview sp-cycle" href="https://fern-and-bean-cafe-starter-f7bc--ps9q.pepita.page/" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Fern &amp; Beans Café’s Home, Menu, About and Visit pages — opens the demo website in a new tab">
                 <div class="shot-frame">
                   <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/fern-and-beans-home.webp" alt="Fern &amp; Beans Café — Home page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-menu.webp" alt="Fern &amp; Beans Café — Menu page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-about.webp" alt="Fern &amp; Beans Café — About page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-visit.webp" alt="Fern &amp; Beans Café — Visit page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-menu.webp" alt="Fern &amp; Beans Café — Menu page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-about.webp" alt="Fern &amp; Beans Café — About page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/fern-and-beans-visit.webp" alt="Fern &amp; Beans Café — Visit page" width="1200" height="750">
+                  </template>
                 </div>
               </a>
             </div>
           </div>
 
-          <!-- 04 NINTH DRAFT -->
+          <!-- 08 NINTH DRAFT -->
           <div class="showcase-project">
-            <div class="sp-num" data-of="/ 04">04</div>
+            <div class="sp-num" data-of="/ 08">08</div>
             <div class="sp-body">
               <div>
                 <p class="sp-category">Creative / digital design studio</p>
                 <h3 class="sp-name">Ninth Draft</h3>
                 <p class="sp-desc">A fictional founder-led creative studio with a portfolio-driven website.</p>
                 <p class="sp-demo">Demonstrates: an editorial, visual-first website with portfolio presentation and project storytelling.</p>
-                <a class="learn sp-link" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" aria-label="View the Ninth Draft website (opens in a new tab)">View the website →</a>
+                <a class="learn sp-link" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" aria-label="View the Ninth Draft demo website (opens in a new tab)">View the demo website →</a>
               </div>
-              <a class="sp-preview sp-cycle" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Live preview cycling through Ninth Draft's Home, Work, Studio, Services and Contact pages — opens the live website in a new tab">
+              <a class="sp-preview sp-cycle" href="https://ninth-draft-a244.pepita.page" target="_blank" rel="noopener" data-interval="3200" aria-label="Preview cycling through screenshots of Ninth Draft’s Home, Work, Studio, Services and Contact pages — opens the demo website in a new tab">
                 <div class="shot-frame">
                   <img class="shot-frame-img is-active" aria-hidden="false" src="../assets/showcase/ninth-draft-home.webp" alt="Ninth Draft — Home page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-work.webp" alt="Ninth Draft — Work page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-studio.webp" alt="Ninth Draft — Studio page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-services.webp" alt="Ninth Draft — Services page" width="1200" height="750" loading="lazy">
-                  <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-contact.webp" alt="Ninth Draft — Start a Project page" width="1200" height="750" loading="lazy">
+                  <template class="shot-more">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-work.webp" alt="Ninth Draft — Work page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-studio.webp" alt="Ninth Draft — Studio page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-services.webp" alt="Ninth Draft — Services page" width="1200" height="750">
+                    <img class="shot-frame-img" aria-hidden="true" src="../assets/showcase/ninth-draft-contact.webp" alt="Ninth Draft — Start a Project page" width="1200" height="750">
+                  </template>
                 </div>
               </a>
             </div>

@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petal &amp; Poise — Bespoke bouquets by feeling (workshop demo)</title>
+  <meta name="description" content="Petal &amp; Poise is a fictional Singapore florist created for a design workshop. Describe a mood, an occasion and a colour palette, and the florist composes the flowers.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f4efe6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-roman-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <p class="demo-band"><strong>Workshop demo</strong> Petal &amp; Poise is a fictional business. Nothing here can be ordered, and nothing you choose is sent.</p>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html" aria-label="Petal and Poise, home">Petal <em>&amp;</em> Poise</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li class="nav-link"><a href="#how">How it works</a></li>
+          <li class="nav-link"><a href="#styles">Styles</a></li>
+          <li class="nav-link"><a href="#questions">Questions</a></li>
+          <li class="nav-cta"><a class="btn btn--primary btn--small" href="brief.html">Create your bouquet brief</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Opening spread -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow key">Bespoke flowers · Singapore</p>
+        <h1 id="hero-title">Tell us the feeling. <em>We'll find the flowers.</em></h1>
+        <p class="hero__lede">Hand-tied bouquets and vase arrangements composed around a mood, an occasion and a colour palette. You describe how it should feel; the florist chooses the stems. No flower names needed.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="brief.html">Create your bouquet brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="text-link" href="#styles">See the styles</a>
+        </div>
+        <p class="hero__small small">A three-step demo. It stays on this page: nothing is sent, saved or ordered.</p>
+      </div>
+
+      <div class="hero__visual">
+        <figure class="hero-figure">
+          <div class="hero-stage" id="hero-stage">
+            <div class="hero-figure__frame">
+              <picture>
+                <source media="(min-width: 960px)"
+                        srcset="assets/images/web/hero-bouquet-960.jpg 960w, assets/images/web/hero-bouquet-1536.jpg 1536w"
+                        sizes="(min-width: 1400px) 52vw, 58vw">
+                <img src="assets/images/web/hero-bouquet-mobile-800.jpg" width="800" height="600"
+                     alt="A loose hand-tied bouquet of apricot garden roses, rust ranunculus, white lisianthus and airy sprigs, tied with a linen ribbon and lying on warm paper in soft window light."
+                     fetchpriority="high" decoding="async">
+              </picture>
+            </div>
+
+            <p class="explore-hint" aria-hidden="true"><span class="explore-hint__dot">+</span>Explore the flowers: select 1, 2 or 3</p>
+
+            <!-- Flower details: a plain list without JavaScript; hotspots + panels with it -->
+            <p class="flowers__title key" id="flowers-title">Three flowers in Fig. 01</p>
+            <ul class="flowers" aria-labelledby="flowers-title">
+              <li class="flower" style="--x:60.2; --y:38.8; --mx:45.3; --my:40.3">
+                <button type="button" class="hotspot" aria-expanded="false" aria-controls="flower-1">
+                  <span class="hotspot__dot" aria-hidden="true">1</span>
+                  <span class="visually-hidden">Flower 1, garden rose: show detail</span>
+                </button>
+                <div class="flower-panel" id="flower-1" role="group" aria-labelledby="flower-1-name">
+                  <div class="flower-panel__lens">
+                    <img src="assets/images/web/flower-garden-rose-400.jpg" width="400" height="400" loading="lazy" decoding="async"
+                         alt="Close-up of the apricot garden rose, its many layered petals opening from a deeper centre.">
+                  </div>
+                  <p class="key">Flower 1</p>
+                  <h3 class="flower-panel__name" id="flower-1-name">Garden rose</h3>
+                  <p class="flower-panel__desc">Layered apricot petals add warmth and softness at the heart of the bouquet.</p>
+                  <button type="button" class="flower-panel__close" aria-label="Close garden rose detail">&times;</button>
+                </div>
+              </li>
+              <li class="flower" style="--x:76.4; --y:26.4; --mx:67.5; --my:25.1">
+                <button type="button" class="hotspot" aria-expanded="false" aria-controls="flower-2">
+                  <span class="hotspot__dot" aria-hidden="true">2</span>
+                  <span class="visually-hidden">Flower 2, ranunculus: show detail</span>
+                </button>
+                <div class="flower-panel" id="flower-2" role="group" aria-labelledby="flower-2-name">
+                  <div class="flower-panel__lens">
+                    <img src="assets/images/web/flower-ranunculus-400.jpg" width="400" height="400" loading="lazy" decoding="async"
+                         alt="Close-up of a rust-coloured ranunculus with tightly spiralled petals.">
+                  </div>
+                  <p class="key">Flower 2</p>
+                  <h3 class="flower-panel__name" id="flower-2-name">Ranunculus</h3>
+                  <p class="flower-panel__desc">Tightly spiralled rust petals bring depth and a quiet richness.</p>
+                  <button type="button" class="flower-panel__close" aria-label="Close ranunculus detail">&times;</button>
+                </div>
+              </li>
+              <li class="flower" style="--x:76.3; --y:43.9; --mx:67.4; --my:46.6">
+                <button type="button" class="hotspot" aria-expanded="false" aria-controls="flower-3">
+                  <span class="hotspot__dot" aria-hidden="true">3</span>
+                  <span class="visually-hidden">Flower 3, lisianthus: show detail</span>
+                </button>
+                <div class="flower-panel" id="flower-3" role="group" aria-labelledby="flower-3-name">
+                  <div class="flower-panel__lens">
+                    <img src="assets/images/web/flower-lisianthus-400.jpg" width="400" height="400" loading="lazy" decoding="async"
+                         alt="Close-up of a white lisianthus with ruffled petals and a pale green centre.">
+                  </div>
+                  <p class="key">Flower 3</p>
+                  <h3 class="flower-panel__name" id="flower-3-name">Lisianthus</h3>
+                  <p class="flower-panel__desc">Ruffled white petals lighten the palette and give the eye somewhere to rest.</p>
+                  <button type="button" class="flower-panel__close" aria-label="Close lisianthus detail">&times;</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <dl class="hero-list">
+            <div><dt class="key">Mood</dt><dd>warm, gently wild</dd></div>
+            <div><dt class="key">Palette</dt><dd>apricot, rust, cream</dd></div>
+            <div><dt class="key">Format</dt><dd>hand-tied, linen ribbon</dd></div>
+          </dl>
+
+          <figcaption class="fig-caption small">
+            <span class="fig-no">Fig. 01</span>A bouquet described in three notes, not flower names. AI-generated illustrative concept, not a product available to order.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Entry 01: How it works -->
+    <section class="entry" id="how" aria-labelledby="how-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 01<span>How it works</span></p>
+        <div class="entry__body">
+          <h2 id="how-title" class="reveal">Three things to tell us. <em>The rest is ours to compose.</em></h2>
+          <ol class="notebook-rows reveal">
+            <li>
+              <span class="num" aria-hidden="true">01</span>
+              <h3>The occasion</h3>
+              <p>A birthday, a thank-you, a new home, or a quiet “thinking of you”. It sets the tone of the gesture.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">02</span>
+              <h3>The mood</h3>
+              <p>How should it feel? Warm and gently wild, bright and joyful, soft and serene. Words like these are all a florist needs.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">03</span>
+              <h3>The palette</h3>
+              <p>Colours they love, colours to avoid, or simply “surprise me”.</p>
+            </li>
+            <li class="row--florist">
+              <span class="num" aria-hidden="true">&amp;</span>
+              <h3>The florist’s eye</h3>
+              <p>You decide how closely the florist follows your notes, from “just as described” to complete creative freedom.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 02: Formats -->
+    <section class="entry entry--tinted" id="styles" aria-labelledby="styles-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 02<span>Two formats</span></p>
+        <div class="entry__body">
+          <h2 id="styles-title" class="reveal">Two ways to give it.</h2>
+          <p class="entry__intro reveal">Every piece is bespoke, so the pictures show a style rather than a product. Choose the format that suits the moment.</p>
+
+          <div class="formats">
+            <figure class="format-figure format-figure--bouquet reveal">
+              <div class="format-figure__frame">
+                <img src="assets/images/web/hands-tying-1200.jpg"
+                     srcset="assets/images/web/hands-tying-720.jpg 720w, assets/images/web/hands-tying-1200.jpg 1200w"
+                     sizes="(min-width: 1240px) 560px, (min-width: 900px) 50vw, 100vw"
+                     width="1200" height="800" loading="lazy" decoding="async"
+                     alt="Two hands tying a linen ribbon around the gathered stems of a peach, rust and cream bouquet.">
+              </div>
+              <figcaption>
+                <h3>Hand-tied bouquet</h3>
+                <p>Stems gathered in the hand and tied with ribbon: made to be carried and handed over in person, then placed in the recipient’s own vase.</p>
+                <p class="fig-caption small"><span class="fig-no">Fig. 02</span>AI-generated illustrative concept, not a product available to order.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="format-figure format-figure--vase reveal">
+              <div class="format-figure__frame">
+                <img src="assets/images/web/vase-arrangement-900.jpg"
+                     srcset="assets/images/web/vase-arrangement-560.jpg 560w, assets/images/web/vase-arrangement-900.jpg 900w"
+                     sizes="(min-width: 1240px) 400px, (min-width: 900px) 36vw, 90vw"
+                     width="900" height="1125" loading="lazy" decoding="async"
+                     alt="A loose, airy arrangement of peach roses, rust ranunculus and white lisianthus in a low stone-coloured bowl on a linen-covered table.">
+              </div>
+              <figcaption>
+                <h3>Vase arrangement</h3>
+                <p>Composed into a vessel, so it’s ready to display from the moment it’s given. Useful when the recipient may not have a vase to hand.</p>
+                <p class="fig-caption small"><span class="fig-no">Fig. 03</span>AI-generated illustrative concept, not a product available to order.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 03: Moods -->
+    <section class="entry" id="moods" aria-labelledby="moods-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 03<span>Moods</span></p>
+        <div class="entry__body">
+          <h2 id="moods-title" class="reveal">Choose a feeling, <em>not a flower.</em></h2>
+          <p class="entry__intro reveal">Six starting points, each shown as one illustrative bouquet. Pick the closest; the brief asks about colours separately, or you can leave both to the florist.</p>
+
+          <ul class="mood-grid reveal">
+            <li>
+              <figure class="mood-card">
+                <div class="mood-card__frame">
+                  <img src="assets/images/web/mood-warm-800.jpg" srcset="assets/images/web/mood-warm-480.jpg 480w, assets/images/web/mood-warm-800.jpg 800w"
+                       sizes="(min-width: 1240px) 280px, (min-width: 760px) 28vw, 46vw" width="800" height="800" loading="lazy" decoding="async"
+                       alt="A loose bouquet of apricot garden roses, rust ranunculus and white lisianthus with airy sprigs.">
+                </div>
+                <figcaption>
+                  <h3>Warm &amp; gently wild</h3>
+                  <p>Apricot, rust and cream, with loose, airy stems that look freshly gathered.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="mood-card">
+                <div class="mood-card__frame">
+                  <img src="assets/images/web/mood-bright-800.jpg" srcset="assets/images/web/mood-bright-480.jpg 480w, assets/images/web/mood-bright-800.jpg 800w"
+                       sizes="(min-width: 1240px) 280px, (min-width: 760px) 28vw, 46vw" width="800" height="800" loading="lazy" decoding="async"
+                       alt="A bright bouquet of coral dahlias, pink ranunculus and marigold-yellow blooms with willowy green leaves.">
+                </div>
+                <figcaption>
+                  <h3>Bright &amp; joyful</h3>
+                  <p>Coral, marigold and leaf green. Generous, sunny and made for celebrating.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="mood-card">
+                <div class="mood-card__frame">
+                  <img src="assets/images/web/mood-serene-800.jpg" srcset="assets/images/web/mood-serene-480.jpg 480w, assets/images/web/mood-serene-800.jpg 800w"
+                       sizes="(min-width: 1240px) 280px, (min-width: 760px) 28vw, 46vw" width="800" height="800" loading="lazy" decoding="async"
+                       alt="A white and cream bouquet of garden roses, cosmos and lisianthus with delicate white sprays and soft green leaves.">
+                </div>
+                <figcaption>
+                  <h3>Soft &amp; serene</h3>
+                  <p>Ivory, cream and pale green. Quiet and restful, for gentle moments.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="mood-card">
+                <div class="mood-card__frame">
+                  <img src="assets/images/web/mood-dramatic-800.jpg" srcset="assets/images/web/mood-dramatic-480.jpg 480w, assets/images/web/mood-dramatic-800.jpg 800w"
+                       sizes="(min-width: 1240px) 280px, (min-width: 760px) 28vw, 46vw" width="800" height="800" loading="lazy" decoding="async"
+                       alt="A rich bouquet of deep magenta dahlias, crimson ranunculus, mauve roses and violet sprigs with touches of peach.">
+                </div>
+                <figcaption>
+                  <h3>Deep &amp; dramatic</h3>
+                  <p>Deep magenta, crimson and violet. Rich, layered and a little theatrical.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="mood-card">
+                <div class="mood-card__frame">
+                  <img src="assets/images/web/mood-fresh-800.jpg" srcset="assets/images/web/mood-fresh-480.jpg 480w, assets/images/web/mood-fresh-800.jpg 800w"
+                       sizes="(min-width: 1240px) 280px, (min-width: 760px) 28vw, 46vw" width="800" height="800" loading="lazy" decoding="async"
+                       alt="A leafy green bouquet with lime-green blooms, white cosmos, ferns and eucalyptus.">
+                </div>
+                <figcaption>
+                  <h3>Fresh &amp; green</h3>
+                  <p>Leafy greens with white blooms. Crisp and garden-like, led by foliage as much as flowers.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="mood-card mood-card--florist">
+                <div class="mood-card__frame">
+                  <img src="assets/images/web/mood-florist-800.jpg" srcset="assets/images/web/mood-florist-480.jpg 480w, assets/images/web/mood-florist-800.jpg 800w"
+                       sizes="(min-width: 1240px) 280px, (min-width: 760px) 28vw, 46vw" width="800" height="800" loading="lazy" decoding="async"
+                       alt="A soft mixed bouquet of peach garden roses, lilac lisianthus, pale yellow ranunculus and white cosmos.">
+                </div>
+                <figcaption>
+                  <h3>Florist’s choice</h3>
+                  <p class="interp">One illustrative interpretation, not a promised arrangement. Yours would be composed for your occasion.</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+          <p class="mood-grid-note small reveal">All six photographs are AI-generated illustrative concepts, not products available to order.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 04: Florist's interpretation -->
+    <section class="entry entry--tinted" id="florist" aria-labelledby="florist-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 04<span>Interpretation</span></p>
+        <div class="entry__body">
+          <h2 id="florist-title" class="reveal">Room for <em>the florist’s eye.</em></h2>
+          <div class="florist-grid reveal">
+            <div>
+              <h3>Leave the flowers to us</h3>
+              <p>You never need to name a flower. Describe the mood and palette, and the florist chooses stems to suit. If there’s a flower you’d love, or one you’d rather avoid, mention it in your note.</p>
+            </div>
+            <div>
+              <h3>Expect the season to show</h3>
+              <p>Flowers are seasonal, so the exact stems vary with what’s fresh. Your finished piece won’t match a picture exactly, and isn’t meant to. What holds steady is your mood, your palette and your chosen format.</p>
+            </div>
+          </div>
+          <blockquote class="pull-quote reveal">
+            <p>Your mood and palette are the brief. <em>The stems are the florist’s to find.</em></p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 05: What to prepare -->
+    <section class="entry" id="prepare" aria-labelledby="prepare-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 05<span>Before you start</span></p>
+        <div class="entry__body">
+          <h2 id="prepare-title" class="reveal">What to have in mind.</h2>
+          <div class="prepare">
+            <ul class="checklist reveal">
+              <li><strong>The occasion.</strong> <span>Birthday, thank-you, anniversary, sympathy, or just because.</span></li>
+              <li><strong>Bouquet or vase.</strong> <span>To hand over in person, or ready to display. You can also let the florist suggest.</span></li>
+              <li><strong>A feeling.</strong> <span>The mood you’d like it to carry.</span></li>
+              <li><strong>Colours.</strong> <span>A palette they’d love, or leave it open.</span></li>
+              <li><strong>How much freedom.</strong> <span>Follow your notes closely, or give the florist free rein.</span></li>
+              <li><strong>Anything else, briefly.</strong> <span>A favourite colour, or a strong scent to avoid.</span></li>
+            </ul>
+            <aside class="aside-note reveal" aria-label="About the demo brief">
+              <p class="key">A note on the demo</p>
+              <p>You won’t be asked for names, addresses, phone numbers or email addresses. Please don’t include them anywhere.</p>
+              <a class="btn btn--primary" href="brief.html">Create your bouquet brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 06: Questions -->
+    <section class="entry entry--tinted" id="questions" aria-labelledby="questions-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 06<span>Questions</span></p>
+        <div class="entry__body">
+          <h2 id="questions-title" class="reveal">Questions, answered.</h2>
+          <div class="faq reveal">
+            <details>
+              <summary>What style can I request?</summary>
+              <div class="answer"><p>A hand-tied bouquet or a vase arrangement, shaped by a mood (warm and gently wild, bright and joyful, soft and serene, deep and dramatic, or fresh and green) and a colour palette. You can leave the format, mood or palette to the florist.</p></div>
+            </details>
+            <details>
+              <summary>Can I leave flower choices to the florist?</summary>
+              <div class="answer"><p>Yes. That’s the idea. You describe the feeling and the colours; the florist chooses the stems. The brief also asks how closely you’d like your notes followed.</p></div>
+            </details>
+            <details>
+              <summary>What details should I prepare?</summary>
+              <div class="answer"><p>The occasion, bouquet or vase, a mood, a palette and how much freedom to give the florist. An optional short note can cover anything else. No personal details are needed.</p></div>
+            </details>
+            <details>
+              <summary>Can the finished arrangement vary with seasonal availability?</summary>
+              <div class="answer"><p>Yes. The exact stems depend on what’s fresh, so a finished piece will differ from any picture. Your mood, palette and format are what the florist works to.</p></div>
+            </details>
+            <details>
+              <summary>Is Petal &amp; Poise a real florist?</summary>
+              <div class="answer"><p>No. It’s a fictional business created for a design workshop. The bouquet brief is a demonstration: nothing is sent, saved or ordered, and no payment is taken. The photographs are AI-generated illustrations.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="entry closing" aria-labelledby="closing-title">
+      <div class="container entry__grid">
+        <p class="entry__label key">Entry 07<span>Your page</span></p>
+        <div class="entry__body">
+          <h2 id="closing-title" class="reveal">Start a page <em>in the notebook.</em></h2>
+          <p class="entry__intro reveal">Three short steps: occasion and format; mood, palette and freedom; then an optional note and a review.</p>
+          <a class="btn btn--primary reveal" href="brief.html">Create your bouquet brief <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="wordmark" aria-hidden="true">Petal <em>&amp;</em> Poise</p>
+      <div>
+        <p>Petal &amp; Poise is a fictional florist created for a design workshop. It is not a real business and does not accept enquiries, orders or payments.</p>
+        <p class="small">Photographs are AI-generated illustrative concepts, not products available to order.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

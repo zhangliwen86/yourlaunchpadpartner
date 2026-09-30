@@ -1,0 +1,10 @@
+Self-hosted web fonts (latin subsets, WOFF2), downloaded from Google Fonts on 2026-09-29.
+
+- Cormorant Garamond (roman + italic, variable wght 500-700) - Christian Thalmann - SIL Open Font License 1.1
+  Headings, used at medium (500) and semibold (600); italic only for short accents.
+- Figtree (variable wght 400-700) - Erik Kennedy - SIL Open Font License 1.1
+  Body text, buttons, captions.
+- IBM Plex Mono 500 - IBM - SIL Open Font License 1.1
+  Short specimen labels only (e.g. "MOOD", "FLOWER 1", "FIG. 01").
+
+License text: https://openfontlicense.org/open-font-license-official-text/
