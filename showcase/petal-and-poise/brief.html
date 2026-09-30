@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create your bouquet brief — Petal &amp; Poise (workshop demo)</title>
+  <meta name="description" content="A three-step demonstration bouquet brief for Petal &amp; Poise, a fictional florist. Nothing is sent, saved or ordered.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f4efe6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-roman-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/brief.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <p class="demo-band"><strong>Workshop demo</strong> Petal &amp; Poise is a fictional business. Nothing here can be ordered, and nothing you choose is sent.</p>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="index.html" aria-label="Petal and Poise, home">Petal <em>&amp;</em> Poise</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html"><span aria-hidden="true">&larr;</span> Back to the notebook</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="brief-main">
+    <div class="container brief-layout">
+      <div class="brief-col">
+        <div class="brief-intro">
+          <p class="eyebrow key">Workshop demonstration</p>
+          <h1>Create your bouquet brief</h1>
+          <p class="brief-intro__lede">Three short steps. Choose by occasion, mood and colour. No flower names needed.</p>
+          <div class="notice">
+            <p class="key">Before you start</p>
+            <p><strong>This is a demo.</strong> Nothing you choose is sent, saved or ordered, and no payment is taken.</p>
+            <p>Please don’t enter names, addresses, phone numbers, email addresses or any other personal information.</p>
+            <p>Your answers are held only on this page and disappear if you refresh or leave.</p>
+          </div>
+        </div>
+
+        <!-- Shown until the script starts; hidden once the demo is ready -->
+        <div class="noscript-message" id="js-fallback">
+          <p>The bouquet brief runs in your browser and needs JavaScript, which isn’t available right now. Nothing has been sent or saved.</p>
+          <p><a href="index.html">Return to the notebook</a></p>
+        </div>
+
+        <div id="brief-app" hidden>
+          <ol class="progress" aria-label="Progress">
+            <li data-progress="1"><span class="step-num">1</span> Occasion &amp; format</li>
+            <li data-progress="2"><span class="step-num">2</span> Mood &amp; palette</li>
+            <li data-progress="3"><span class="step-num">3</span> Note &amp; review</li>
+          </ol>
+
+          <form id="brief-form" autocomplete="off" novalidate aria-label="Bouquet brief demo">
+            <!-- Step 1 -->
+            <section class="step" data-step="1" aria-labelledby="step1-title">
+              <h2 class="step__heading" id="step1-title" tabindex="-1"><span class="key">Step 1 of 3</span> Occasion and format</h2>
+              <div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="err1-title">
+                <h3 id="err1-title">Please choose before continuing</h3>
+                <ul></ul>
+              </div>
+
+              <fieldset id="fs-occasion" data-field="occasion">
+                <legend>What’s the occasion?</legend>
+                <p class="field-error" id="err-occasion" hidden></p>
+                <div class="chips">
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="birthday" data-label="Birthday"><span class="option__body">Birthday</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="thank-you" data-label="Thank you"><span class="option__body">Thank you</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="congratulations" data-label="Congratulations"><span class="option__body">Congratulations</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="anniversary" data-label="Anniversary"><span class="option__body">Anniversary</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="new-home" data-label="New home"><span class="option__body">New home</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="get-well" data-label="Get well soon"><span class="option__body">Get well soon</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="sympathy" data-label="Sympathy"><span class="option__body">Sympathy</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="just-because" data-label="Just because"><span class="option__body">Just because</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="occasion" value="other" data-label="Something else"><span class="option__body">Something else</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset id="fs-format" data-field="format">
+                <legend>Bouquet or vase?</legend>
+                <p class="hint">Pictures are AI-generated illustrative concepts, not products to order.</p>
+                <p class="field-error" id="err-format" hidden></p>
+                <div class="tiles">
+                  <label class="option">
+                    <input class="option__input" type="radio" name="format" value="bouquet" data-label="Hand-tied bouquet">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/hands-tying-square-600.jpg" width="600" height="600" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Hand-tied bouquet</span><span class="tile__desc">Tied with ribbon, to hand over in person.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="format" value="vase" data-label="Vase arrangement">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/vase-arrangement-square-600.jpg" width="600" height="600" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Vase arrangement</span><span class="tile__desc">Composed in a vessel, ready to display.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="format" value="florist" data-label="Florist to suggest">
+                    <span class="option__body">
+                      <span class="tile__media tile__media--open" aria-hidden="true">Florist’s choice</span>
+                      <span class="tile__text"><span class="tile__title">Not sure</span><span class="tile__desc">Let the florist suggest the best format.</span></span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="step-actions">
+                <span class="spacer"></span>
+                <button type="button" class="btn btn--primary" data-action="next">Continue to step 2 <span class="arrow" aria-hidden="true">&rarr;</span></button>
+              </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section class="step" data-step="2" aria-labelledby="step2-title" hidden>
+              <h2 class="step__heading" id="step2-title" tabindex="-1"><span class="key">Step 2 of 3</span> Mood, palette and freedom</h2>
+              <div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="err2-title">
+                <h3 id="err2-title">Please choose before continuing</h3>
+                <ul></ul>
+              </div>
+
+              <fieldset id="fs-mood" data-field="mood">
+                <legend>Which mood feels right?</legend>
+                <p class="hint">Each mood is shown as one AI-generated illustrative bouquet, not a product to order. “Florist’s choice” pictures one possible interpretation, not a promised arrangement.</p>
+                <p class="field-error" id="err-mood" hidden></p>
+                <div class="tiles">
+                  <label class="option">
+                    <input class="option__input" type="radio" name="mood" value="warm" data-label="Warm &amp; gently wild">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/mood-warm-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Warm &amp; gently wild</span><span class="tile__desc">Loose, airy and freshly gathered.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="mood" value="bright" data-label="Bright &amp; joyful">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/mood-bright-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Bright &amp; joyful</span><span class="tile__desc">Generous, sunny, celebratory.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="mood" value="serene" data-label="Soft &amp; serene">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/mood-serene-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Soft &amp; serene</span><span class="tile__desc">Quiet and restful.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="mood" value="dramatic" data-label="Deep &amp; dramatic">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/mood-dramatic-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Deep &amp; dramatic</span><span class="tile__desc">Rich, layered, a little theatrical.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="mood" value="fresh" data-label="Fresh &amp; green">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/mood-fresh-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Fresh &amp; green</span><span class="tile__desc">Crisp, leafy, garden-like.</span></span>
+                    </span>
+                  </label>
+                  <label class="option">
+                    <input class="option__input" type="radio" name="mood" value="florist" data-label="Florist’s choice">
+                    <span class="option__body">
+                      <span class="tile__media"><img src="assets/images/web/mood-florist-480.jpg" width="480" height="480" alt="" loading="lazy" decoding="async"></span>
+                      <span class="tile__text"><span class="tile__title">Florist’s choice</span><span class="tile__desc">Let the occasion guide it. Pictured: one possible interpretation.</span></span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset id="fs-palette" data-field="palette">
+                <legend>Which colours?</legend>
+                <p class="field-error" id="err-palette" hidden></p>
+                <div class="palettes">
+                  <label class="option"><input class="option__input" type="radio" name="palette" value="apricot" data-label="Apricot, rust &amp; cream"><span class="option__body"><span class="swatches" aria-hidden="true"><span class="swatch" style="--c:#e8a87c"></span><span class="swatch" style="--c:#a8472a"></span><span class="swatch" style="--c:#f1e6d2"></span></span>Apricot, rust &amp; cream</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="palette" value="coral" data-label="Coral, marigold &amp; green"><span class="option__body"><span class="swatches" aria-hidden="true"><span class="swatch" style="--c:#ee6f5b"></span><span class="swatch" style="--c:#e9a93b"></span><span class="swatch" style="--c:#6e8b4e"></span></span>Coral, marigold &amp; green</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="palette" value="ivory" data-label="Ivory, cream &amp; sage"><span class="option__body"><span class="swatches" aria-hidden="true"><span class="swatch" style="--c:#f7f2e6"></span><span class="swatch" style="--c:#e3d5b8"></span><span class="swatch" style="--c:#a3b18a"></span></span>Ivory, cream &amp; sage</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="palette" value="burgundy" data-label="Burgundy, plum &amp; ochre"><span class="option__body"><span class="swatches" aria-hidden="true"><span class="swatch" style="--c:#6e1f2b"></span><span class="swatch" style="--c:#5b2a4a"></span><span class="swatch" style="--c:#c9a24a"></span></span>Burgundy, plum &amp; ochre</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="palette" value="greens" data-label="Whites &amp; fresh greens"><span class="option__body"><span class="swatches" aria-hidden="true"><span class="swatch" style="--c:#fafaf5"></span><span class="swatch" style="--c:#b9c66a"></span><span class="swatch" style="--c:#3f5b3a"></span></span>Whites &amp; fresh greens</span></label>
+                  <label class="option"><input class="option__input" type="radio" name="palette" value="florist" data-label="Florist’s choice"><span class="option__body"><span class="palette__open" aria-hidden="true"></span>Florist’s choice</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset id="fs-freedom" data-field="freedom">
+                <legend>How much freedom for the florist?</legend>
+                <p class="field-error" id="err-freedom" hidden></p>
+                <div class="stack">
+                  <label class="option"><input class="option__input" type="radio" name="freedom" value="close" data-label="Follow my choices closely"><span class="option__body"><span class="radio-dot" aria-hidden="true"></span><span class="tile__title">Follow my choices closely</span><span class="tile__desc">Keep to the mood and palette as described.</span></span></label>
+                  <label class="option"><input class="option__input" type="radio" name="freedom" value="some" data-label="Some interpretation welcome"><span class="option__body"><span class="radio-dot" aria-hidden="true"></span><span class="tile__title">Some interpretation welcome</span><span class="tile__desc">Use my choices as a starting point.</span></span></label>
+                  <label class="option"><input class="option__input" type="radio" name="freedom" value="full" data-label="Complete creative freedom"><span class="option__body"><span class="radio-dot" aria-hidden="true"></span><span class="tile__title">Complete creative freedom</span><span class="tile__desc">Surprise me, within the spirit of the occasion.</span></span></label>
+                </div>
+              </fieldset>
+
+              <div class="step-actions">
+                <button type="button" class="btn btn--ghost" data-action="back"><span aria-hidden="true">&larr;</span> Back to step 1</button>
+                <button type="button" class="btn btn--primary" data-action="next">Continue to step 3 <span class="arrow" aria-hidden="true">&rarr;</span></button>
+              </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section class="step" data-step="3" aria-labelledby="step3-title" hidden>
+              <h2 class="step__heading" id="step3-title" tabindex="-1"><span class="key">Step 3 of 3</span> Note and review</h2>
+              <div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="err3-title">
+                <h3 id="err3-title">Please check before finishing</h3>
+                <ul></ul>
+              </div>
+
+              <div class="note-field" id="fs-note" data-field="note">
+                <label for="note">Anything else? <span class="optional">(optional)</span></label>
+                <p class="hint" id="note-hint">Up to 200 characters, such as “she loves the sea” or “nothing strongly scented”. Please don’t include names, addresses, phone numbers or email addresses.</p>
+                <p class="field-error" id="err-note" hidden></p>
+                <textarea id="note" name="note" maxlength="200" rows="4" aria-describedby="note-hint note-count" spellcheck="true"></textarea>
+                <p class="counter small" id="note-count">0 of 200 characters</p>
+              </div>
+
+              <div class="review" aria-labelledby="review-title">
+                <h3 id="review-title">Review your brief</h3>
+                <p class="hint">Check your answers. Use Edit to change any of them.</p>
+                <dl class="summary-list" id="review-list"></dl>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn btn--ghost" data-action="back"><span aria-hidden="true">&larr;</span> Back to step 2</button>
+                <button type="button" class="btn btn--primary" data-action="finish">Finish demo</button>
+              </div>
+            </section>
+          </form>
+
+          <!-- Completion -->
+          <section class="completion" id="completion" aria-labelledby="done-title" hidden>
+            <h2 class="completion__heading" id="done-title" tabindex="-1">Your sample bouquet brief is ready. Nothing has been sent or ordered.</h2>
+            <p class="completion__sub">This summary exists only on this screen. It clears when you start again, refresh or leave the page.</p>
+            <div class="notebook-page">
+              <div>
+                <p class="key">Sample brief · not an order</p>
+                <h3>Your notebook page</h3>
+                <dl class="summary-list" id="done-list"></dl>
+              </div>
+              <figure class="completion__visual" id="done-visual" style="margin:0"></figure>
+            </div>
+            <div class="completion__actions">
+              <button type="button" class="btn btn--primary" data-action="reset">Start again</button>
+              <a class="text-link" href="index.html">Return to the notebook</a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <aside class="page-preview" id="page-preview" aria-labelledby="preview-title" hidden>
+        <div class="notebook-page">
+          <h2 id="preview-title" class="key">Your page so far</h2>
+          <dl class="preview-list" id="preview-list"></dl>
+          <p class="preview-foot small">Held only on this page. Nothing is sent.</p>
+        </div>
+      </aside>
+    </div>
+
+    <p class="visually-hidden" id="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="wordmark" aria-hidden="true">Petal <em>&amp;</em> Poise</p>
+      <div>
+        <p>Petal &amp; Poise is a fictional florist created for a design workshop. It is not a real business and does not accept enquiries, orders or payments.</p>
+        <p class="small">Photographs are AI-generated illustrative concepts, not products available to order.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
