@@ -795,3 +795,9 @@
 #ylpp-sprout-root.sp-init-failed{
   display:none !important;
 }
+
+/* Reserve the lower desktop dock position for direct WhatsApp contact. */
+@media(min-width:641px){#ylpp-sprout-root{--sp-root-bottom:90px;}}
+
+/* Desktop WhatsApp is now in the header; restore Sprout's normal corner. */
+@media(min-width:641px){#ylpp-sprout-root{--sp-root-bottom:20px;}}

@@ -104,6 +104,16 @@
     if (!el.value){ setError(el, "Please tell us what you'd like help with."); return false; }
     clearError(el); return true;
   }
+  function validateContactMethod(){
+    var el = document.getElementById('contact-email');
+    if (!form.querySelector('input[name="preferred_contact"]:checked')){
+      setError(el, 'Please choose Email, Phone or Either.'); return false;
+    }
+    clearError(el); return true;
+  }
+  form.querySelectorAll('input[name="preferred_contact"]').forEach(function(el){
+    el.addEventListener('change', validateContactMethod);
+  });
   // Phone is optional and deliberately unvalidated beyond being a
   // plain text field — no regex narrow enough to cover Singapore
   // and international formats without rejecting real numbers.
@@ -188,9 +198,10 @@
     var validName = validateName();
     var validEmail = validateEmail();
     var validInterest = validateInterest();
+    var validContact = validateContactMethod();
 
-    if (!validName || !validEmail || !validInterest){
-      var errCount = [validName, validEmail, validInterest].filter(function(v){ return !v; }).length;
+    if (!validName || !validEmail || !validInterest || !validContact){
+      var errCount = [validName, validEmail, validInterest, validContact].filter(function(v){ return !v; }).length;
       showStatus('error', 'Please fix the highlighted field' + (errCount > 1 ? 's' : '') + ' below.');
       var firstInvalid = form.querySelector('[aria-invalid="true"]');
       if (firstInvalid) firstInvalid.focus();
@@ -211,7 +222,9 @@
       if (result.status === 'success'){
         var interestEl = document.getElementById('interest');
         trackLeadEvent(interestEl ? interestEl.value : '');
-        showStatus('success', "Thank you. Your message has been sent. We'll be in touch.");
+        showStatus('success', interestEl && interestEl.value === 'workshop'
+          ? "Thank you — your workshop enquiry has been received. We will follow up to discuss dates and your questions. You can also WhatsApp us at +65 8995 1995. Your workshop place is not yet confirmed."
+          : "Thank you. Your message has been sent. We will be in touch. You can also WhatsApp us at +65 8995 1995.");
         form.reset();
         return;
       }

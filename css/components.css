@@ -526,3 +526,57 @@ html.reduce-motion .hs-num{ transition:none; opacity:.85; }
   .form-submit-row .btn{ width:100%; text-align:center; }
   .radio-group{ gap:16px 26px; }
 }
+
+/* Direct WhatsApp contact uses the normal page flow to avoid covering controls. */
+.whatsapp-contact { margin-top: 18px; }
+.whatsapp-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; max-width: 100%; color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.whatsapp-link svg { flex: 0 0 22px; }
+.whatsapp-number { display: block; white-space: nowrap; }
+.whatsapp-link:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+
+/* Floating direct contact, opposite Sprout; above the mobile action bar. */
+.whatsapp-float{position:fixed;left:22px;bottom:22px;z-index:95;display:flex;align-items:center;gap:9px;text-decoration:none;color:#102d50;font-family:var(--font-sans);}
+.whatsapp-float-label{background:#fff;border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600;box-shadow:0 3px 16px #0002;}
+.whatsapp-float-icon{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 4px 18px #0003;border:2px solid #fff;}
+.whatsapp-float-icon svg{width:30px;height:30px;}
+.whatsapp-float:hover .whatsapp-float-icon{background:#128c4a;}
+.whatsapp-float:focus-visible{outline:3px solid #102d50;outline-offset:5px;border-radius:999px;}
+body:has(#ylpp-sprout-root.sp-open) .whatsapp-float{display:none;}
+@media(max-width:640px){.whatsapp-float{left:14px;bottom:calc(82px + env(safe-area-inset-bottom,0px));gap:6px;}.whatsapp-float-icon{width:50px;height:50px;}.whatsapp-float-label{font-size:12px;padding:9px 12px;}}
+@media(max-width:380px){.whatsapp-float-label{display:none;}}
+
+/* Revised contact dock: keep the content's left reading edge clear. */
+.whatsapp-float{left:auto;right:22px;}
+.whatsapp-float-label{display:none;}
+.whatsapp-float:hover .whatsapp-float-label,.whatsapp-float:focus-visible .whatsapp-float-label{display:block;}
+.footer-socials{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+.footer-socials a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#0f2d52;color:white;}
+.footer-socials a:hover{background:#107c8c;}
+.footer-socials a:focus-visible{outline:3px solid #d9a441;outline-offset:4px;}
+@media(max-width:640px){
+.whatsapp-float{left:auto;right:14px;bottom:calc(9px + env(safe-area-inset-bottom,0px));}
+.whatsapp-float:hover .whatsapp-float-label,.whatsapp-float:focus-visible .whatsapp-float-label{display:none;}
+.mobile-sticky-cta{padding-right:78px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));}
+body:has(.mobile-sticky-cta.is-hidden) .whatsapp-float{display:none;}
+}
+
+/* Leave footer text clear of the corner contact dock. */
+@media(min-width:641px){.footer-bottom{padding-right:110px;}}
+/* Compact icons: quiet visual weight with generous clickable areas. */
+.whatsapp-float-icon{width:44px;height:44px;border-width:1px;box-shadow:0 2px 8px #0002;}
+.whatsapp-float-icon svg{width:24px;height:24px;}
+.whatsapp-float:focus-visible{outline-color:var(--c-gold);}
+.footer-socials{gap:4px;margin-top:12px;}
+.footer-socials a{position:relative;isolation:isolate;background:transparent;color:var(--c-cream,#f5f1e7);}
+.footer-socials a::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px solid #ffffff40;background:#ffffff08;z-index:-1;}
+.footer-socials a svg{width:17px;height:17px;}
+.footer-socials a:hover{background:transparent;color:var(--c-gold);}
+.footer-socials a:hover::before{border-color:currentColor;}
+@media(max-width:640px){.whatsapp-float{bottom:calc(12px + env(safe-area-inset-bottom,0px));}}
+/* Header contact option: understated icon beside the enquiry link. */
+.main-nav a.header-whatsapp{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:11px;color:#F2ECDD;}
+.main-nav a.header-whatsapp svg{width:22px;height:22px;flex:none;}
+.main-nav a.header-whatsapp:hover{color:var(--c-gold);background:rgba(242,236,221,.08);}
+.main-nav a.header-whatsapp:focus-visible{outline:2px solid var(--c-gold);outline-offset:2px;}
+@media(min-width:641px){.whatsapp-float{display:none;}}
+@media(max-width:640px){.header-whatsapp-item{display:none;}}
