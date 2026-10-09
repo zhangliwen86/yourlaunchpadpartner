@@ -15,14 +15,31 @@
 
    No form currently exists on the homepage, About, Services,
    Workshop or Showcase pages — their CTAs are plain links — so
-   this file is inert there. It only does anything on a page that
-   contains #contact-form.
+   ordinary visitors are unaffected there. On Workshop only, an
+   explicitly marked QA journey carries its test marker to the
+   enquiry link even if the optional attribution helper is missing.
+   Form submission handling runs only where #contact-form exists.
    ============================================================ */
 (function(){
   'use strict';
 
   var form = document.getElementById('contact-form');
-  if (!form) return; // this page has no form — nothing else in this file runs
+  if (!form){
+    // Keep an explicitly marked Workshop QA journey marked even if the helper
+    // is missing. Other pages and ordinary visitor links remain untouched.
+    if (/^\/workshop(?:\/|\/index\.html)?$/.test(window.location.pathname) &&
+        internalTestFromQuery(window.location.search)){
+      document.querySelectorAll('a[href]').forEach(function(link){
+        var target;
+        try { target = new URL(link.getAttribute('href'),window.location.href); } catch(e){ return; }
+        if (target.origin !== window.location.origin || !/^\/contact(?:\/|\/index\.html)?$/.test(target.pathname) ||
+            target.searchParams.getAll('interest').length !== 1 || target.searchParams.get('interest') !== 'workshop') return;
+        target.searchParams.set('cg_test','1');
+        link.setAttribute('href',target.pathname+target.search+target.hash);
+      });
+    }
+    return;
+  }
 
   window.YLPP_FORM_CONFIG = window.YLPP_FORM_CONFIG || {
     // Sourced from the <form action="..."> attribute in the HTML —
@@ -39,6 +56,19 @@
 
   var statusEl = document.getElementById('formStatus');
   var submitBtn = document.getElementById('formSubmitBtn');
+  var submissionPending = false;
+  // Any explicit non-zero test marker is conservative QA classification.
+  // Independent of optional helper, URL route shape, or parameter ordering.
+  function internalTestFromQuery(search){
+    return search.replace(/^\?/, '').split('&').some(function(part){
+      var split = part.indexOf('='), key = split < 0 ? part : part.slice(0, split);
+      try { key = decodeURIComponent(key.replace(/\+/g, ' ')); } catch (e) { return false; }
+      if (key !== 'cg_test') return false;
+      var value = split < 0 ? '' : part.slice(split + 1);
+      try { value = decodeURIComponent(value.replace(/\+/g, ' ')); } catch (e) { return true; }
+      return value !== '0';
+    });
+  }
 
   /* ---------- ?interest= preselection ----------
      Allowlist only. The raw query value is never written into the
@@ -142,7 +172,7 @@
   /* ---------- GA4 lead event ----------
      Fires exactly one event — generate_lead — on a genuinely
      successful submission only (see the success branch below).
-     lead_type is read directly from the #interest select (never
+     lead_type is captured from the validated select at submission (never
      from FormData, so no free-text or PII field can ever reach
      this), and is checked against this fixed allowlist before
      being sent: an unexpected value is silently not sent rather
@@ -152,15 +182,27 @@
      form reset, or the rest of the submit flow. */
   var GA4_LEAD_TYPES = ['accounting', 'grants', 'automation', 'workshop', 'unsure'];
 
-  function trackLeadEvent(leadType){
-    if (GA4_LEAD_TYPES.indexOf(leadType) === -1) return; // not an allowed value — event not sent
+  function trackLeadEvent(leadType, attribution, internalTest){
+    if (internalTest || GA4_LEAD_TYPES.indexOf(leadType) === -1) return;
     try {
-      if (typeof window.gtag === 'function'){
-        window.gtag('event', 'generate_lead', { lead_type: leadType });
+      var parameters = { lead_type: leadType };
+      if (leadType === 'workshop') Object.assign(parameters, attribution);
+      if (typeof window.gtag === 'function') window.gtag('event','generate_lead',parameters);
+    } catch(e){ /* optional analytics cannot break confirmation */ }
+  }
+
+  function submissionAttribution(internalTest){
+    var result = { cg_source:'unknown', cg_medium:'unknown', cg_campaign:'unknown', cg_content:'unknown', cg_attribution_mode:'unknown', cg_test:internalTest?'1':'0' };
+    try {
+      var helper = window.YLPP_WORKSHOP_ATTRIBUTION;
+      var raw = helper && helper.fields();
+      var allowed = ['profile','v25','v26','v27','v28','v29','v30','v31','v32','v33','v34','v35','v36'];
+      if(raw && raw.cg_source==='tiktok' && raw.cg_medium==='organic_social' && raw.cg_campaign==='cg001' && raw.cg_attribution_mode==='tagged'){
+        result.cg_source='tiktok';result.cg_medium='organic_social';result.cg_campaign='cg001';result.cg_attribution_mode='tagged';
+        result.cg_content=allowed.indexOf(raw.cg_content)!==-1?raw.cg_content:'unknown';
       }
-    } catch (e){
-      // analytics must never break the form
-    }
+    } catch(e){ /* fall back to finite unknown values, never drop the test marker */ }
+    return result;
   }
 
   /* ---------- submission adapter ----------
@@ -186,6 +228,7 @@
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    if (submissionPending) return;
 
     // Honeypot: a bot that fills every field trips this. A real
     // visitor never sees or reaches it (aria-hidden, off-screen,
@@ -208,21 +251,32 @@
       return;
     }
 
+    // Snapshot validated category/test/context once; later UI edits cannot relabel receipt.
+    var submittedInterest = document.getElementById('interest').value;
+    var submittedTest = internalTestFromQuery(window.location.search);
+    var submittedAttribution = submissionAttribution(submittedTest);
+    submissionPending = true;
     hideStatus();
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     showStatus('processing', 'Sending your message…');
 
     var formData = new FormData(form);
+    if (submittedInterest === 'workshop'){
+      Object.keys(submittedAttribution).forEach(function(key){ formData.set(key,submittedAttribution[key]); });
+    } else if (submittedTest) {
+      // Mark QA receipts even if the visitor changes the test to another website enquiry category.
+      formData.set('cg_test','1');
+    }
 
     submitToEndpoint(formData).then(function(result){
+      submissionPending = false;
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send your message';
 
       if (result.status === 'success'){
-        var interestEl = document.getElementById('interest');
-        trackLeadEvent(interestEl ? interestEl.value : '');
-        showStatus('success', interestEl && interestEl.value === 'workshop'
+        trackLeadEvent(submittedInterest, submittedAttribution, submittedTest);
+        showStatus('success', submittedInterest === 'workshop'
           ? "Thank you — your workshop enquiry has been received. We will follow up to discuss dates and your questions. You can also WhatsApp us at +65 8995 1995. Your workshop place is not yet confirmed."
           : "Thank you. Your message has been sent. We will be in touch. You can also WhatsApp us at +65 8995 1995.");
         form.reset();
